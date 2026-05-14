@@ -1,0 +1,326 @@
+{
+  "packId": "text-master-20260514-154416",
+  "mode": "production",
+  "title": "加班码农",
+  "description": "长期加班的动漫程序员，用大厂黑话表达会议、排期、联调和发版日常。",
+  "copyright": "个人原创",
+  "platform": "wechat-sticker-open-platform",
+  "workflowPhase": "wechat-export-ready",
+  "status": "export-generated-needs-final-human-review",
+  "createdAt": "2026-05-14",
+  "inputMode": {
+    "selected": "text-to-master",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "sourceMaterial": {
+    "type": "text",
+    "status": "user-brief-captured-pending-master-card-confirmation",
+    "textBrief": "生成一个长期加班的程序员的动漫人物形象，18个表情包应该体现中国互联网大厂的一些黑话。",
+    "notes": [
+      "Use the user's confirmed character concept as the source of truth.",
+      "Do not generate master candidates until the text brief and master character card are confirmed.",
+      "Use generic internet-company jargon only; avoid real company names, logos, trademarks, and copyrighted IP."
+    ]
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "approved",
+    "card": "master/character-card.md",
+    "approvedImage": "master/approved/master-reference.png",
+    "approvalRequired": true,
+    "finalStickerProductionAllowed": true,
+    "lockedTraits": [
+      "human anime programmer",
+      "long-overtime work state",
+      "messy black hair with mild under-eye shadows",
+      "dark hoodie with muted tech-blue accents",
+      "cute but tired expression baseline",
+      "clean sticker-friendly anime rendering",
+      "thick readable outline",
+      "no real company logo or trademark"
+    ],
+    "allowedVariations": [
+      "facial expression",
+      "pose",
+      "hand gesture",
+      "caption-aligned simple props",
+      "small scene cues"
+    ],
+    "forbiddenVariations": [
+      "changing species or character type",
+      "changing dominant colors after approval",
+      "changing face or body shape after approval",
+      "adding unrelated characters",
+      "changing rendering style",
+      "adding unapproved logos, trademarks, or copyrighted IP",
+      "allowing generated images to invent or rewrite final captions"
+    ]
+  },
+  "wechatTarget": {
+    "packType": "static",
+    "stickerCount": 18,
+    "sheetCount": 2,
+    "stickersPerSheet": 9,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent"
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent"
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "noText": true
+    },
+    "form": {
+      "name": {
+        "value": "加班码农",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true
+      },
+      "introduction": {
+        "value": "长期加班的动漫程序员，用大厂黑话表达会议、排期、联调和发版日常。",
+        "maxChineseChars": 80
+      },
+      "copyright": {
+        "value": "个人原创",
+        "maxChineseChars": 10
+      }
+    }
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "status": "draft-pending-user-confirmation",
+    "rendering": "local-composition-preferred",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark brown",
+      "accentShadow": "warm yellow/brown",
+      "placement": "near lower part of each sticker without blocking key facial expression"
+    },
+    "items": [
+      {
+        "id": 1,
+        "slug": "align",
+        "text": "先对齐下",
+        "pose": "tired but polite wave beside a laptop"
+      },
+      {
+        "id": 2,
+        "slug": "group",
+        "text": "拉个群吧",
+        "pose": "holding phone with resigned smile"
+      },
+      {
+        "id": 3,
+        "slug": "change",
+        "text": "需求变更",
+        "pose": "shocked face with floating requirement pages"
+      },
+      {
+        "id": 4,
+        "slug": "schedule",
+        "text": "排期爆了",
+        "pose": "buried under calendar blocks"
+      },
+      {
+        "id": 5,
+        "slug": "release",
+        "text": "今晚发版",
+        "pose": "holding coffee at night with laptop glow"
+      },
+      {
+        "id": 6,
+        "slug": "integration",
+        "text": "还在联调",
+        "pose": "sleepy debugging with cables and terminal windows"
+      },
+      {
+        "id": 7,
+        "slug": "gray",
+        "text": "灰度一下",
+        "pose": "carefully pushing a tiny launch button"
+      },
+      {
+        "id": 8,
+        "slug": "closed-loop",
+        "text": "快速闭环",
+        "pose": "drawing a checkmark loop with marker"
+      },
+      {
+        "id": 9,
+        "slug": "risk",
+        "text": "风险可控",
+        "pose": "nervous smile holding a small shield"
+      },
+      {
+        "id": 10,
+        "slug": "logic",
+        "text": "底层逻辑",
+        "pose": "serious face pointing at layered code blocks"
+      },
+      {
+        "id": 11,
+        "slug": "granularity",
+        "text": "颗粒度粗",
+        "pose": "squinting at a messy task board"
+      },
+      {
+        "id": 12,
+        "slug": "lever",
+        "text": "这个抓手",
+        "pose": "grabbing an oversized handle with abstract icons only"
+      },
+      {
+        "id": 13,
+        "slug": "empower",
+        "text": "赋能一下",
+        "pose": "awkward thumbs up with sparkle effect"
+      },
+      {
+        "id": 14,
+        "slug": "document",
+        "text": "沉淀文档",
+        "pose": "typing a thick document with tired focus"
+      },
+      {
+        "id": 15,
+        "slug": "data",
+        "text": "数据说话",
+        "pose": "presenting charts with serious expression"
+      },
+      {
+        "id": 16,
+        "slug": "weekly",
+        "text": "周报已写",
+        "pose": "collapsed beside a completed report"
+      },
+      {
+        "id": 17,
+        "slug": "stress-test",
+        "text": "再压测下",
+        "pose": "panicked in front of overheating server icons"
+      },
+      {
+        "id": 18,
+        "slug": "run-first",
+        "text": "先跑起来",
+        "pose": "running while carrying a laptop"
+      }
+    ]
+  },
+  "assets": {
+    "wechatExport": {
+      "root": "exports/wechat",
+      "stickersDir": "exports/wechat/stickers",
+      "cover": "exports/wechat/cover.png",
+      "icon": "exports/wechat/icon.png",
+      "banner": "exports/wechat/banner.png",
+      "metadata": "exports/wechat/metadata.json",
+      "form": "exports/wechat/form.md"
+    }
+  },
+  "generatedAssets": {
+    "masterReference": "master/approved/master-reference.png",
+    "rawSheets": [
+      "generated/sheets/raw/sheet-01.png",
+      "generated/sheets/raw/sheet-02.png"
+    ],
+    "captionedSheets": [
+      "generated/sheets/captioned/sheet-01.png",
+      "generated/sheets/captioned/sheet-02.png"
+    ],
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewContactSheet": "review/stickers/stickers-contact-sheet.png",
+    "reviewOverview": "review/wechat/export-assets-overview.png",
+    "validationReport": "review/wechat/validation-report.json"
+  },
+  "validation": {
+    "officialSpecCheckedAt": "2026-05-14 local AGENTS.md upload contract; recheck official platform before production export",
+    "preGenerationGate": {
+      "masterCharacterCardApproved": true,
+      "approvedMasterImageExists": true,
+      "finalStickerGenerationAllowed": true
+    },
+    "masterChecks": [
+      "input-mode-selected",
+      "master-character-card-exists",
+      "master-character-locks-identity-traits",
+      "master-character-defines-allowed-variations",
+      "master-character-defines-forbidden-variations",
+      "user-approval-recorded-before-final-sticker-production"
+    ],
+    "wechatChecks": [
+      "pack-type-is-static",
+      "sticker-count-is-18",
+      "all-stickers-exist",
+      "all-stickers-are-png",
+      "all-stickers-are-240x240",
+      "all-stickers-have-alpha",
+      "all-stickers-have-transparent-corners",
+      "all-stickers-under-500kb",
+      "cover-exists",
+      "cover-is-png-240x240-transparent-under-500kb",
+      "icon-exists",
+      "icon-is-png-50x50-transparent-under-100kb",
+      "banner-exists",
+      "banner-is-750x400-opaque-under-500kb",
+      "form-name-under-8-chinese-chars-no-punctuation-no-spaces",
+      "form-introduction-under-80-chinese-chars",
+      "form-copyright-under-10-chinese-chars",
+      "metadata-json-exists",
+      "form-md-exists",
+      "manual-review-banner-has-no-text",
+      "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
+    ]
+  }
+}

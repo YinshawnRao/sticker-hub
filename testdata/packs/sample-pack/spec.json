@@ -1,0 +1,414 @@
+{
+  "packId": "sample-pack",
+  "mode": "test",
+  "title": "虎宝开聊",
+  "description": "一只元气小老虎的日常表情，开心、犯困、加油和下班都能用。",
+  "copyright": "贴纸工坊",
+  "style": "可爱小老虎，中文互联网表情包风格，圆润厚描边，白字深色描边加暖色阴影。",
+  "platform": "wechat-sticker-open-platform",
+  "workflowPhase": "wechat-static-pack-target",
+  "inputMode": {
+    "selected": "text-to-master",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "description": {
+      "text-to-master": "用户提供纯文字描述，先生成并确认母版形象，再基于母版生产表情包。",
+      "image-to-master": "用户提供母版图片，先提炼并确认母版卡，再基于母版形象生产表情包。"
+    },
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "approved-for-sample-wechat-export",
+    "card": "master/character-card.md",
+    "input": {
+      "mode": "text-to-master",
+      "textBrief": "可爱小老虎，橙色毛发、奶油色口鼻和肚皮、圆耳朵、黑色虎纹、圆润厚描边，适合中文互联网聊天表情。",
+      "referenceImage": null
+    },
+    "approvedImage": "master/approved/tiger-master-reference-sheet.png",
+    "approvalRequired": true,
+    "lockedTraits": [
+      "橙色小老虎",
+      "奶油色口鼻和肚皮",
+      "圆耳朵",
+      "黑色虎纹",
+      "大眼睛和圆脸",
+      "Q版圆润身体",
+      "干净厚描边",
+      "可爱、元气、表情夸张"
+    ],
+    "allowedVariations": [
+      "表情",
+      "动作",
+      "手势",
+      "少量聊天场景道具",
+      "用于表达语义的简单装饰符号"
+    ],
+    "forbiddenVariations": [
+      "改变物种",
+      "改变主色",
+      "改变脸型",
+      "加入无关角色",
+      "切换成写实或复杂插画风格",
+      "加入未经确认的品牌、商标或版权元素"
+    ]
+  },
+  "wechatTarget": {
+    "source": "user-provided-upload-form-screenshots",
+    "packType": "static",
+    "stickerCount": 18,
+    "sheetCount": 2,
+    "stickersPerSheet": 9,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "avoid": [
+        "white background",
+        "white outline",
+        "jagged edges",
+        "square frame",
+        "hard rectangular border",
+        "excessive blank space",
+        "decorative clutter",
+        "text unless pure-text sticker pack"
+      ]
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent",
+      "recommendation": "front-facing recognizable character head",
+      "avoid": [
+        "white background",
+        "white outline",
+        "jagged edges",
+        "square frame",
+        "hard rectangular border",
+        "excessive blank space",
+        "decorative clutter"
+      ]
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "avoid": [
+        "text information",
+        "white background",
+        "transparent background",
+        "stretched or squashed elements"
+      ],
+      "requirements": [
+        "content related to the sticker pack",
+        "rich image with some story",
+        "lively colors distinguishable from the WeChat background"
+      ]
+    },
+    "form": {
+      "name": {
+        "value": "虎宝开聊",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true
+      },
+      "introduction": {
+        "value": "一只元气小老虎的日常表情，开心、犯困、加油和下班都能用。",
+        "maxChineseChars": 80
+      },
+      "copyright": {
+        "value": "贴纸工坊",
+        "maxChineseChars": 10
+      }
+    }
+  },
+  "character": {
+    "name": "小老虎",
+    "consistencyRules": [
+      "同一批贴纸必须保持相同毛色、脸型、耳朵、条纹、眼睛风格和整体画风。",
+      "每张只改变动作、表情或少量道具，不新增无关角色。",
+      "角色表情必须在小尺寸下仍然清晰。"
+    ]
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "rendering": "local-composition-preferred",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark brown",
+      "accentShadow": "warm yellow/brown",
+      "placement": "near lower part of each sticker without blocking key facial expression"
+    },
+    "items": [
+      {
+        "id": "01-hi",
+        "text": "嗨呀",
+        "pose": "happy wave"
+      },
+      {
+        "id": "02-laugh",
+        "text": "哈哈哈",
+        "pose": "laughing"
+      },
+      {
+        "id": "03-like",
+        "text": "赞！",
+        "pose": "thumbs up"
+      },
+      {
+        "id": "04-cry",
+        "text": "哭哭",
+        "pose": "crying"
+      },
+      {
+        "id": "05-angry",
+        "text": "生气了",
+        "pose": "angry pout"
+      },
+      {
+        "id": "06-sleepy",
+        "text": "困了",
+        "pose": "sleepy"
+      },
+      {
+        "id": "07-shocked",
+        "text": "震惊",
+        "pose": "surprised"
+      },
+      {
+        "id": "08-love",
+        "text": "爱你",
+        "pose": "holding a heart"
+      },
+      {
+        "id": "09-cheer",
+        "text": "冲鸭！",
+        "pose": "cheering"
+      },
+      {
+        "id": "10-received",
+        "text": "收到",
+        "pose": "saluting or holding an OK sign"
+      },
+      {
+        "id": "11-thanks",
+        "text": "谢谢",
+        "pose": "bowing or holding small flowers"
+      },
+      {
+        "id": "12-no",
+        "text": "不行",
+        "pose": "crossed arms or waving no"
+      },
+      {
+        "id": "13-ok",
+        "text": "可以",
+        "pose": "confident nod or OK gesture"
+      },
+      {
+        "id": "14-slacking",
+        "text": "摸鱼",
+        "pose": "relaxing at desk or holding a fish"
+      },
+      {
+        "id": "15-offwork",
+        "text": "下班",
+        "pose": "running away happily with a bag"
+      },
+      {
+        "id": "16-goodnight",
+        "text": "晚安",
+        "pose": "sleeping with blanket or moon"
+      },
+      {
+        "id": "17-wronged",
+        "text": "委屈",
+        "pose": "teary pouting face"
+      },
+      {
+        "id": "18-daze",
+        "text": "发呆",
+        "pose": "blank stare with empty expression"
+      }
+    ]
+  },
+  "layout": {
+    "sheets": {
+      "type": "preview-grid",
+      "columns": 3,
+      "rows": 3,
+      "count": 2,
+      "itemsPerSheet": 9
+    },
+    "individualStickerCanvas": {
+      "mode": "wechat-export",
+      "width": 240,
+      "height": 240,
+      "background": "transparent"
+    },
+    "croppingRules": [
+      "Do not use final mechanical 3x3 slicing without visual review.",
+      "Crop by actual visual region when captions or decorative marks are close to cell boundaries.",
+      "Center each crop on a fixed transparent canvas.",
+      "Avoid clipped text, clipped character parts, and residue from adjacent stickers."
+    ]
+  },
+  "assets": {
+    "currentTestAssets": {
+      "sheetPreview": "generated/tiger-sticker-sheet-transparent.png",
+      "captionedSheet": "generated/tiger-sticker-sheet-with-text.png",
+      "rawSheetsDir": "generated/sheets/raw",
+      "captionedSheetsDir": "generated/sheets/captioned",
+      "stickersDir": "generated/stickers",
+      "sourceCropsDir": "generated/stickers/source-crops",
+      "wechatDraftStickersDir": "generated/stickers/wechat-draft",
+      "contactSheet": "review/tiger-stickers-contact-sheet.png",
+      "stickers": [
+        "generated/stickers/01-hi-嗨呀.png",
+        "generated/stickers/02-laugh-哈哈哈.png",
+        "generated/stickers/03-like-赞.png",
+        "generated/stickers/04-cry-哭哭.png",
+        "generated/stickers/05-angry-生气了.png",
+        "generated/stickers/06-sleepy-困了.png",
+        "generated/stickers/07-shocked-震惊.png",
+        "generated/stickers/08-love-爱你.png",
+        "generated/stickers/09-cheer-冲鸭.png"
+      ]
+    },
+    "wechatExport": {
+      "root": "exports/wechat",
+      "stickersDir": "exports/wechat/stickers",
+      "stickers": [
+        "exports/wechat/stickers/01-hi.png",
+        "exports/wechat/stickers/02-laugh.png",
+        "exports/wechat/stickers/03-like.png",
+        "exports/wechat/stickers/04-cry.png",
+        "exports/wechat/stickers/05-angry.png",
+        "exports/wechat/stickers/06-sleepy.png",
+        "exports/wechat/stickers/07-shocked.png",
+        "exports/wechat/stickers/08-love.png",
+        "exports/wechat/stickers/09-cheer.png",
+        "exports/wechat/stickers/10-received.png",
+        "exports/wechat/stickers/11-thanks.png",
+        "exports/wechat/stickers/12-no.png",
+        "exports/wechat/stickers/13-ok.png",
+        "exports/wechat/stickers/14-slacking.png",
+        "exports/wechat/stickers/15-offwork.png",
+        "exports/wechat/stickers/16-goodnight.png",
+        "exports/wechat/stickers/17-wronged.png",
+        "exports/wechat/stickers/18-daze.png"
+      ],
+      "cover": "exports/wechat/cover.png",
+      "icon": "exports/wechat/icon.png",
+      "banner": "exports/wechat/banner.png",
+      "metadata": "exports/wechat/metadata.json",
+      "form": "exports/wechat/form.md",
+      "status": "generated-basic-validation-passed"
+    },
+    "sourceStickers": [
+      "generated/stickers/01-hi-嗨呀.png",
+      "generated/stickers/02-laugh-哈哈哈.png",
+      "generated/stickers/03-like-赞.png",
+      "generated/stickers/04-cry-哭哭.png",
+      "generated/stickers/05-angry-生气了.png",
+      "generated/stickers/06-sleepy-困了.png",
+      "generated/stickers/07-shocked-震惊.png",
+      "generated/stickers/08-love-爱你.png",
+      "generated/stickers/09-cheer-冲鸭.png"
+    ],
+    "cover": null,
+    "banner": null,
+    "introCopy": null
+  },
+  "validation": {
+    "officialSpecCheckedAt": "2026-05-14 user-provided-upload-form-screenshots",
+    "testModeChecks": [
+      "full-sheet-preview-exists",
+      "captioned-sheet-exists",
+      "individual-stickers-exist",
+      "individual-stickers-are-png",
+      "individual-stickers-are-rgba",
+      "individual-stickers-have-transparent-corners",
+      "caption-text-matches-spec",
+      "contact-sheet-exists",
+      "manual-review-for-crop-cleanliness"
+    ],
+    "masterChecks": [
+      "input-mode-selected",
+      "master-character-card-exists",
+      "master-character-locks-identity-traits",
+      "master-character-defines-allowed-variations",
+      "master-character-defines-forbidden-variations",
+      "user-approval-recorded-before-final-sticker-production"
+    ],
+    "wechatChecks": [
+      "pack-type-is-static",
+      "sticker-count-is-18",
+      "all-stickers-exist",
+      "all-stickers-are-png",
+      "all-stickers-are-240x240",
+      "all-stickers-have-alpha",
+      "all-stickers-have-transparent-corners",
+      "all-stickers-under-500kb",
+      "cover-exists",
+      "cover-is-png-240x240-transparent-under-500kb",
+      "icon-exists",
+      "icon-is-png-50x50-transparent-under-100kb",
+      "banner-exists",
+      "banner-is-750x400-opaque-under-500kb",
+      "form-name-under-8-chinese-chars-no-punctuation-no-spaces",
+      "form-introduction-under-80-chinese-chars",
+      "form-copyright-under-10-chinese-chars",
+      "metadata-json-exists",
+      "form-md-exists",
+      "manual-review-banner-has-no-text",
+      "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
+    ],
+    "notes": [
+      "The current generated test assets only contain 9 stickers at 512x512.",
+      "The WeChat export target requires 18 independent 240x240 PNG stickers plus cover, icon, banner, metadata, and form copy.",
+      "Before real production submission, re-check the latest live WeChat Sticker Open Platform requirements."
+    ]
+  }
+}

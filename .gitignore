@@ -1,0 +1,45 @@
+# macOS / editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Local runtime / temporary outputs
+.env
+.env.*
+tmp/
+.tmp/
+dist/
+build/
+node_modules/
+__pycache__/
+*.pyc
+
+# Generated sticker assets are intentionally not committed.
+# Keep source-of-truth text files such as brief.md, spec.json, and master/character-card.md.
+testdata/packs/*/generated/**
+testdata/packs/*/review/**
+testdata/packs/*/exports/**
+testdata/packs/*/master/input/**
+testdata/packs/*/master/candidates/**
+testdata/packs/*/master/approved/**
+testdata/packs/*/source/references/**
+
+production/packs/*/generated/**
+production/packs/*/review/**
+production/packs/*/exports/**
+production/packs/*/master/input/**
+production/packs/*/master/candidates/**
+production/packs/*/master/approved/**
+production/packs/*/source/references/**
+
+# Preserve empty template directories.
+!production/packs/_template/generated/
+!production/packs/_template/generated/**
+!production/packs/_template/review/
+!production/packs/_template/review/**
+!production/packs/_template/exports/
+!production/packs/_template/exports/**
+!production/packs/_template/master/input/.gitkeep
+!production/packs/_template/master/candidates/.gitkeep
+!production/packs/_template/master/approved/.gitkeep
+!production/packs/_template/source/references/.gitkeep

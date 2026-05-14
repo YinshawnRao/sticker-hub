@@ -1,0 +1,159 @@
+{
+  "packId": "_template",
+  "mode": "production",
+  "title": "",
+  "description": "",
+  "copyright": "",
+  "platform": "wechat-sticker-open-platform",
+  "workflowPhase": "master-character",
+  "inputMode": {
+    "selected": "",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "not-started",
+    "card": "master/character-card.md",
+    "approvedImage": null,
+    "approvalRequired": true,
+    "lockedTraits": [],
+    "allowedVariations": [],
+    "forbiddenVariations": []
+  },
+  "wechatTarget": {
+    "packType": "static",
+    "stickerCount": 18,
+    "sheetCount": 2,
+    "stickersPerSheet": 9,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent"
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent"
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "noText": true
+    },
+    "form": {
+      "name": {
+        "value": "",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true
+      },
+      "introduction": {
+        "value": "",
+        "maxChineseChars": 80
+      },
+      "copyright": {
+        "value": "",
+        "maxChineseChars": 10
+      }
+    }
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "rendering": "local-composition-preferred",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark brown",
+      "accentShadow": "warm yellow/brown",
+      "placement": "near lower part of each sticker without blocking key facial expression"
+    },
+    "items": []
+  },
+  "assets": {
+    "wechatExport": {
+      "root": "exports/wechat",
+      "stickersDir": "exports/wechat/stickers",
+      "cover": "exports/wechat/cover.png",
+      "icon": "exports/wechat/icon.png",
+      "banner": "exports/wechat/banner.png",
+      "metadata": "exports/wechat/metadata.json",
+      "form": "exports/wechat/form.md"
+    }
+  },
+  "validation": {
+    "officialSpecCheckedAt": "2026-05-14 user-provided-upload-form-screenshots",
+    "masterChecks": [
+      "input-mode-selected",
+      "master-character-card-exists",
+      "master-character-locks-identity-traits",
+      "master-character-defines-allowed-variations",
+      "master-character-defines-forbidden-variations",
+      "user-approval-recorded-before-final-sticker-production"
+    ],
+    "wechatChecks": [
+      "pack-type-is-static",
+      "sticker-count-is-18",
+      "all-stickers-exist",
+      "all-stickers-are-png",
+      "all-stickers-are-240x240",
+      "all-stickers-have-alpha",
+      "all-stickers-have-transparent-corners",
+      "all-stickers-under-500kb",
+      "cover-exists",
+      "cover-is-png-240x240-transparent-under-500kb",
+      "icon-exists",
+      "icon-is-png-50x50-transparent-under-100kb",
+      "banner-exists",
+      "banner-is-750x400-opaque-under-500kb",
+      "form-name-under-8-chinese-chars-no-punctuation-no-spaces",
+      "form-introduction-under-80-chinese-chars",
+      "form-copyright-under-10-chinese-chars",
+      "metadata-json-exists",
+      "form-md-exists",
+      "manual-review-banner-has-no-text",
+      "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
+    ]
+  }
+}

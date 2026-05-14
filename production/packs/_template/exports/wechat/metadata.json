@@ -1,0 +1,16 @@
+{
+  "packId": "_template",
+  "platform": "wechat-sticker-open-platform",
+  "type": "static",
+  "name": "",
+  "introduction": "",
+  "copyright": "",
+  "status": "template",
+  "assets": {
+    "stickersDir": "stickers",
+    "stickerCount": 18,
+    "cover": "cover.png",
+    "icon": "icon.png",
+    "banner": "banner.png"
+  }
+}

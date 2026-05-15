@@ -174,13 +174,25 @@ These rules are mandatory for `image-to-master` packs and any pack with an appro
 - A final sticker, cover, icon, or banner character must be traceable to the approved master image through a concrete image dependency, not just through text copied from the character card.
 - Do not generate production stickers from a text-only prompt when an approved master image exists.
 - Do not replace the approved character with a deterministic hand-drawn placeholder, simplified local drawing, or newly invented mascot unless the user explicitly approves that replacement as a new master character.
-- Local scripts may draw captions, props, motion marks, layout backgrounds, review sheets, and validation overlays. They must not redraw the character's face, hair, body, outfit, or core silhouette from scratch as a substitute for the approved master.
+- Local scripts may draw captions, crop boxes, layout backgrounds, contact sheets, and validation overlays. They must not create or alter the character artwork itself, including face, eyes, mouth, hair, body, outfit, pose, hands, expression, props, or action marks for final sticker images.
 - If using an image model, provide the approved master/reference image as an actual image input for every master-derivative generation step and prompt it to preserve identity. A prompt that only describes the character in words is not enough.
-- If using local compositing, read the approved master/reference image file directly and preserve its visible character pixels or an approved cleaned derivative. The generation script must fail if the approved source image is missing.
+- Final sticker character artwork must come from image-model outputs or explicitly user-approved image edits derived from the approved master/reference image. A local script may only process those model/user-approved images for text composition, cropping, resizing, compression, and validation.
 - If a cleaned master image is produced from a reference, store it in `master/candidates/` first and move it to `master/approved/` only after user approval, unless the user has explicitly delegated approval in the current instruction.
 - The generation record must state the identity-preservation method, the exact approved source image path, and whether each character asset was model-edited from the image, locally composited from image pixels, or manually approved.
 - Review output must include a side-by-side master/reference comparison and a contact sheet that makes identity drift visible. If the final character is not recognizably the same character as the approved master, the package is not upload-ready even if dimensions, alpha, file size, and safe-area checks pass.
 - Validators should include a source-linkage check for image-to-master packs: approved master/reference file exists, metadata records it, the generation record names it, and the active generation path reads or imports it. Treat a missing or text-only linkage as a validation failure.
+
+## Sticker Semantic Variation Rules
+
+A sticker pack is not upload-ready if it is only one approved character cutout repeated with different captions.
+
+- Every sticker must visibly express its own caption through at least one strong non-text cue: facial expression, eye shape, mouth shape, eyebrow angle, pose, hand gesture, body angle, motion marks, or a meaningful prop.
+- Captions must clarify the image; they must not be the only reason the sticker can be understood.
+- Do not export a final pack where most stickers share the same face, body pose, and hand position with only small prop changes.
+- For the planned sticker list, record a per-sticker expression/action plan before export. The plan should name the intended emotion or action, not only the prop.
+- Review contact sheets must be checked with captions mentally ignored. If the stickers look like duplicates without reading the text, regenerate or revise them.
+- Local scripts must not synthesize expression or action layers for final stickers. Expression, pose, hands, props, and action marks must be present in the generated or manually approved source artwork before local captioning and export processing.
+- Validators or review reports should include a semantic-variation checklist. Automated validation can be simple, but the report must make clear that human review must reject duplicate-looking stickers even if mechanical checks pass.
 
 ## Task Directory Boundaries
 
@@ -204,13 +216,13 @@ Do not mix task outputs. In particular, never place raw sheets, rejected candida
 3. Put user-provided reference images or prompt notes into `source/` and `master/input/`.
 4. Create or derive the master character card in `master/character-card.md`.
 5. Get user approval for the master character card and approved master image.
-6. Choose and record an identity-preserving generation path: model edit from approved image, approved cleaned derivative, or local pixel compositing from the approved master. Text-only generation is not allowed for `image-to-master` production assets.
+6. Choose and record an identity-preserving generation path: model edit from approved image, model generation with the approved image supplied as visual reference, or manually approved image edits. Text-only generation and local character synthesis are not allowed for `image-to-master` production assets.
 7. Generate two raw `3x3` sticker-sheet previews under `generated/sheets/raw/`.
 8. Add deterministic Simplified Chinese captions, preferably by local image composition, under `generated/sheets/captioned/`.
 9. Crop accepted sheets into intermediate transparent PNGs under `generated/stickers/source-crops/`.
 10. Normalize drafts to WeChat size under `generated/stickers/wechat-draft/`.
 11. Produce contact sheets and validation reports under `review/`, including master-vs-output identity review images.
-12. Run validation against the captured WeChat Sticker Open Platform requirements and the source-linkage checks above.
+12. Run validation against the captured WeChat Sticker Open Platform requirements, the source-linkage checks above, and the semantic-variation checklist.
 13. Export an upload-ready dry-run package into `exports/wechat/`.
 14. Iterate in test mode until visual quality and validation are acceptable.
 15. Only then mirror the workflow into production.
@@ -375,6 +387,7 @@ For every candidate pack, check:
 - Real transparency, not a baked checkerboard background
 - Caption text accuracy and readability
 - Reference identity preservation for `image-to-master` packs: final assets must be recognizably derived from the approved master/reference image, not from an unrelated or simplified substitute character.
+- Semantic variation: each sticker should remain distinguishable by expression, pose, gesture, motion, or prop even when the caption text is ignored.
 - Clean individual crops with no adjacent-sticker residue
 - Safe-area compliance: no cropped or edge-touching hair, hands, shoes, props, caption strokes, or shadows.
 - Visual consistency across all stickers

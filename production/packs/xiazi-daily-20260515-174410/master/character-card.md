@@ -2,9 +2,9 @@
 
 ## Status
 
-Approved for asset production by user generation command. Export generated and pending human review.
+Master candidate 01 has been accepted for continuing generation and copied into `master/approved/xiazi-approved-master.png`.
 
-Final sticker production is not allowed until this card and the master image are approved by the user.
+Final sticker production is allowed only through image-model-derived raw sticker sheets that use the approved master/reference image as the visual identity anchor. Local scripts may only crop, remove chroma-key background, compose exact captions, resize, export, and validate.
 
 ## Input Mode
 
@@ -181,12 +181,5 @@ Draft captions, concrete usage scenes, and visual actions for confirmation:
 - [x] Allowed and forbidden variations are drafted.
 - [x] Character identity, allowed variations, and forbidden variations are accepted by user.
 - [x] User approves the caption and scene plan by generation command.
-- [x] Approved master image is stored at `master/approved/xiazi-approved-master.png`.
-- [x] Final 18-sticker production is allowed and generated.
-
-## Generation Result
-
-- Generated at: `2026-05-15T18:04:47+08:00`
-- Output package: `exports/wechat/`
-- Validation report: `review/wechat/validation-report.md`
-- Official spec check note: `review/wechat/official-spec-check.md`
+- [x] Approved master image is stored in `master/approved/`.
+- [x] Final 18-sticker production is allowed through image-model raw sheets only.

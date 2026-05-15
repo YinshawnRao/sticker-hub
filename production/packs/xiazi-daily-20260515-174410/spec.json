@@ -5,8 +5,8 @@
   "description": "爱看书爱旅行也认真工作的霞子把生活里的小情绪都画成表情",
   "copyright": "饶小虎",
   "platform": "wechat-sticker-open-platform",
-  "workflowPhase": "wechat-export-generated",
-  "status": "wechat-export-generated-pending-human-review",
+  "workflowPhase": "wechat-export-generated-pending-human-review",
+  "status": "local-mechanical-validation-passed-pending-human-review",
   "createdAt": "2026-05-15",
   "createdAtLocal": "2026-05-15 17:44:10 Asia/Shanghai",
   "inputMode": {
@@ -19,7 +19,7 @@
   },
   "sourceMaterial": {
     "type": "image",
-    "status": "captured-and-used-for-master-character",
+    "status": "captured-and-used-for-approved-master-and-model-raw-sheets",
     "originalLocalPath": "/Users/yinshawnrao/Pictures/表情包/000mother/cx.png",
     "referenceImages": [
       {
@@ -90,10 +90,10 @@
     "wechatExport": "exports/wechat"
   },
   "masterCharacter": {
-    "status": "approved-for-asset-production-by-user-generation-command",
+    "status": "approved-master-and-model-derived-assets-generated",
     "card": "master/character-card.md",
     "approvedImage": "master/approved/xiazi-approved-master.png",
-    "approvalRequired": true,
+    "approvalRequired": false,
     "finalStickerProductionAllowed": true,
     "draftName": "霞子",
     "shortPersonality": "warm, energetic, curious, practical, broad-interested, slightly workaholic",
@@ -201,7 +201,7 @@
   },
   "captions": {
     "language": "zh-Hans",
-    "status": "approved-for-production-by-user-generation-command",
+    "status": "locked-and-composed",
     "rendering": "local-composition-preferred",
     "style": {
       "fill": "white",
@@ -346,31 +346,47 @@
       "icon": "exports/wechat/icon.png",
       "banner": "exports/wechat/banner.png",
       "metadata": "exports/wechat/metadata.json",
-      "form": "exports/wechat/form.md"
+      "form": "exports/wechat/form.md",
+      "generatedAt": "2026-05-15T19:25:05+08:00",
+      "uploadReady": false,
+      "localMechanicalValidationPassed": true,
+      "validationReport": "review/wechat/validation-report.json",
+      "manualReviewRequired": [
+        "identity-preservation-against-master-output-identity-review",
+        "semantic-variation-with-captions-hidden",
+        "caption-readability-at-small-size",
+        "cover-icon-no-white-background-or-square-frame",
+        "banner-has-no-text"
+      ]
     },
     "generated": {
       "approvedMaster": "master/approved/xiazi-approved-master.png",
+      "masterCandidates": [
+        "master/candidates/xiazi-master-candidate-01.png"
+      ],
       "rawSheets": [
-        "generated/sheets/raw/sheet-01-raw.png",
-        "generated/sheets/raw/sheet-02-raw.png"
+        "generated/sheets/raw/sheet-01-raw-ai.png",
+        "generated/sheets/raw/sheet-02-raw-ai.png",
+        "generated/sheets/raw/sheet-01-raw-transparent.png",
+        "generated/sheets/raw/sheet-02-raw-transparent.png"
       ],
       "captionedSheets": [
         "generated/sheets/captioned/sheet-01-captioned.png",
         "generated/sheets/captioned/sheet-02-captioned.png"
       ],
       "review": [
-        "review/master/master-reference-review.png",
+        "review/master/master-candidate-review-01.png",
         "review/stickers/source-crops-contact-sheet.png",
         "review/stickers/final-stickers-contact-sheet.png",
+        "review/wechat/master-output-identity-review.png",
         "review/wechat/export-assets-overview.png",
         "review/wechat/validation-report.json",
-        "review/wechat/validation-report.md",
-        "review/wechat/official-spec-check.md"
+        "review/wechat/semantic-variation-checklist.md"
       ]
     }
   },
   "validation": {
-    "officialSpecCheckedAt": "2026-05-15T18:14:43+08:00 official page attempted from current environment; local AGENTS.md upload contract applied because official page was not readable",
+    "officialSpecCheckedAt": "2026-05-15T18:23:26+08:00 official page attempted from current environment; local AGENTS.md upload contract applied because official page was not readable",
     "initialFormChecks": [
       "name-pass-5-chinese-chars-no-punctuation-no-spaces",
       "introduction-pass-under-80-chinese-chars",
@@ -413,6 +429,5 @@
       "form-md-exists",
       "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
     ]
-  },
-  "generatedAt": "2026-05-15T18:14:43+08:00"
+  }
 }

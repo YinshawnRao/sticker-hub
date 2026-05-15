@@ -2,9 +2,11 @@
 
 ## Status
 
-Production pack initialized. Current phase: `master-character`.
+Production pack initialized. Current phase: `wechat-export-generated-pending-human-review`.
 
-Final sticker production is blocked until the user approves both the master character card and the master character image.
+Master candidate 01 has been accepted for continuation as `master/approved/xiazi-approved-master.png`. Final sticker production must still use image-model raw sheets for expression, pose, hands, props, and action marks; local scripts may only process those outputs.
+
+The current dry-run WeChat export package has been generated under `exports/wechat/`. Local mechanical validation passed; real upload is still pending human review for identity preservation, semantic variation, small-size caption readability, cover/icon quality, banner text absence, and latest official platform rules.
 
 ## Pack ID
 
@@ -69,9 +71,8 @@ The pack should feel friendly, relatable, and clean. The humor should be everyda
 
 ## Review Notes
 
-Needs user confirmation:
+Current human review focus:
 
-- Whether the title should stay `霞子的日常`.
-- Whether the proposed character locks are accurate enough.
-- Whether the planned 18 captions and poses match Xiazi's personality.
-- Whether to generate a cleaned master candidate from the reference image before producing sticker sheets.
+- Identity: compare `review/wechat/master-output-identity-review.png` against the approved master.
+- Semantic variation: check `review/stickers/final-stickers-contact-sheet.png` with captions mentally hidden.
+- Upload detail: re-check cover/icon/banner quality and the latest WeChat platform rules before real submission.

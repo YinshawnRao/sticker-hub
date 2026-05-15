@@ -1,30 +1,43 @@
 # Generation Record
 
-- Generated at: 2026-05-15T18:14:43+08:00
-- Mode: reference-driven local PIL compositor, no model-generated text.
-- Input reference: `master/input/cx-master-reference.png`.
-- Character source: every sticker, cover, icon, and banner character cutout is composited from the approved reference pixels, then locally resized/rotated and decorated.
-- Previous simplified hand-drawn substitute path was removed from the active renderer for this pack because it did not preserve the reference identity closely enough.
-- Captions are rendered locally from `spec.json` and are not invented by an image model.
-- Export assets are written only under this pack directory.
+- Reset at: 2026-05-15 Asia/Shanghai after rejecting prior local-drawing/compositing outputs.
+- Current phase: approved master is present; continuing with image-model raw sticker sheet generation.
+- Image generation mode: built-in `image_gen` using `master/input/cx-master-reference.png` as the visual identity reference.
+- Local processing performed: copy generated candidate into `master/candidates/`, remove flat chroma-key background, create review comparison image.
+- Local processing not allowed for final artwork: no local drawing of face, eyes, mouth, hair, pose, hands, props, or action marks.
 
-## Caption Plan
+## Cleared Outputs
 
-1. 你好呀 - general chat greeting, suitable for opening a conversation with friends or colleagues without emphasizing a specific time of day - Xiazi waves with a bright smile, holding a small book or phone, with light friendly sparkle
-2. 收到 - acknowledging a message, task, reminder, or arrangement - Xiazi holds a checklist card with a confident nod and a clear checkmark
-3. 我看看 - about to review a document, message, plan, photo, or travel guide before replying - Xiazi leans toward an open notebook or laptop, eyes focused, one hand near her chin
-4. 马上来 - responding when someone calls her over, asks for help, or invites her to join - Xiazi hurries forward with a small bag, motion marks, and an eager expression
-5. 认真中 - focused work mode, reading materials, writing notes, or dealing with a deadline - Xiazi sits at a laptop with notes beside her, eyebrows slightly focused but cute
-6. 灵感来了 - suddenly getting an idea while working, reading, or planning a trip - Xiazi raises one finger with a small lightbulb and sparkle above her head
-7. 有点难 - facing a tricky task, confusing plan, complicated route, or hard book chapter - Xiazi looks at scattered papers with a small sweat drop, still trying seriously
-8. 搞定啦 - finishing a task, booking a trip, solving a problem, or completing a small goal - Xiazi jumps happily with a checkmark card and celebratory stars
-9. 谢谢你 - thanking someone for help, support, reminders, or encouragement - Xiazi makes a small bow or heart gesture with a soft grateful smile
-10. 加油呀 - encouraging a friend, teammate, or herself before work, study, or travel - Xiazi raises both fists with energetic sparkle and a determined smile
-11. 看书中 - quiet reading time, studying, relaxing at home, or staying offline for a bit - Xiazi reads an open book with relaxed eyes, small page-turning marks nearby
-12. 出发啦 - leaving for a trip, commute, outing, or new plan - Xiazi carries a suitcase or backpack, steps forward, and looks excited
-13. 拍一下 - taking a travel photo, recording food, scenery, books, or daily moments - Xiazi holds a camera or phone, framing a shot with playful focus
-14. 休息一下 - taking a short break from work, reading, chatting, or traveling - Xiazi stretches with a cup or book nearby, expression relaxed and relieved
-15. 等一下 - asking the other person to wait briefly while Xiazi checks information, packs up, or catches up with the conversation - Xiazi raises one hand in a wait gesture while holding a phone or notebook, with a small clock cue
-16. 晚点回 - busy at work, on the road, reading, or temporarily unable to respond - Xiazi holds a phone with an apologetic smile and small clock cue
-17. 好耶 - reacting to good news, agreeing to a plan, confirming a trip idea, or celebrating a pleasant little moment - Xiazi raises both hands happily with bright stars or small hearts, expression excited and cute
-18. 下班啦 - ending the workday and switching back to personal life - Xiazi waves with a small shoulder bag, warm sunset-like sparkle, relaxed happy face
+The previous generated outputs were removed from:
+
+- `generated/`
+- `review/`
+- `exports/`
+- `master/approved/`
+
+The source reference images and pack metadata remain.
+
+## Master Candidate 01
+
+- Chroma-key source: `master/candidates/xiazi-master-candidate-01-chromakey.png`
+- Transparent candidate: `master/candidates/xiazi-master-candidate-01.png`
+- Review comparison: `review/master/master-candidate-review-01.png`
+- Approved continuation source: `master/approved/xiazi-approved-master.png`
+- Continuation approval: user invoked `/goal` on 2026-05-15 to continue generation under the repository constraints.
+
+## Prompt Summary
+
+Create one clean anime/chibi WeChat sticker master candidate from the visible chibi girl reference image only. Preserve the dark shoulder-length hair, rounded bangs, large brown eyes, blush, cream sleeveless lace or knit top, warm soft rendering, and thick dark outlines. Ignore unrelated floral/banner screenshots. Use a flat `#00ff00` background for local background removal. No text, watermark, logo, flowers, scenery, or copied decorative banner content.
+
+## Raw Sheet Gate
+
+Final 18-sticker generation must use the approved master/reference as an actual image input and must produce real expression/action variation from the image model before any local captioning, cropping, or export processing. Local processing is limited to chroma-key removal, cropping, exact caption composition, sizing, cover/icon/banner composition, review sheets, metadata, and validation.
+
+## Raw Sticker Sheets 2026-05-15
+
+- Built-in generated source sheet 1: `/Users/yinshawnrao/.codex/generated_images/019e2b4a-548c-7220-a18b-728bcb52f815/ig_09204231038cdecb016a06fd63d9f48191bd4777e889e89a3e.png`
+- Built-in generated source sheet 2: `/Users/yinshawnrao/.codex/generated_images/019e2b4a-548c-7220-a18b-728bcb52f815/ig_09204231038cdecb016a06fdec009081918c078fd84859ce0f.png`
+- Workspace raw sheet 1: `generated/sheets/raw/sheet-01-raw-ai.png`
+- Workspace raw sheet 2: `generated/sheets/raw/sheet-02-raw-ai.png`
+- Identity method: the approved master `master/approved/xiazi-approved-master.png` was loaded into the conversation and used as the visual reference for both image-model raw sheets.
+- Local processing method: `source/prompts/generate_assets.py` removes chroma-key background, crops model outputs, renders exact captions from `spec.json`, creates WeChat-size PNGs, cover, icon, banner, review sheets, metadata, and validation reports. It does not draw or alter character face, eyes, mouth, hair, pose, hands, props, or action marks.

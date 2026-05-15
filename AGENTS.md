@@ -221,6 +221,7 @@ These rules are derived from the user's captured WeChat Sticker Open Platform up
 - All sticker images in one pack must have a unified style.
 - Sticker images should have enough semantic and visual difference from each other.
 - Layout should be reasonable; each image should avoid excessive blank space.
+- Layout must also avoid edge-touching content. Hair tips, ears, raised hands, shoes, props, caption strokes, and shadows must not touch or be clipped by the `240x240` canvas edge.
 
 ### Basic Form Fields
 
@@ -321,12 +322,33 @@ Chinese internet sticker packs usually rely on short Simplified Chinese captions
 Do not rely only on mechanical grid slicing for final individual stickers. Grid slicing is acceptable for a first pass, but final crops should be checked for:
 
 - No clipped character parts.
+- No clipped or edge-touching hair. For character stickers, the complete head silhouette and every visible hair tip/spike must remain inside the canvas with clear transparent padding above it.
 - No clipped caption strokes or shadows.
 - No residue from adjacent stickers.
 - Reasonable transparent padding around the visual content.
 - Consistent canvas size across the pack.
 
 If a full sheet has captions or decorative marks close to row boundaries, crop by each sticker's actual visual region and then center the result on a fixed transparent canvas.
+
+## Safe-Area And Anti-Crop Rules
+
+This is a hard upload-readiness rule. Several packs have failed review risk because the top of the character's hair was cut off or placed too close to the sticker edge. Do not treat this as a minor visual issue.
+
+For generated raw sheets or single-sticker source images:
+
+- Prompt for the full character and all props to be completely inside frame.
+- Prompt for generous blank background above the highest hair tip; a good source-generation target is at least `15%` of the source image height above the highest hair or raised hand.
+- If the image model returns clipped hair, clipped hands, clipped shoes, clipped props, or edge-touching content, reject that source and regenerate it instead of trying to hide the problem during final resize.
+
+For final `240x240` sticker exports:
+
+- The alpha bounding box of visible content must not touch any canvas edge.
+- Use at least `8px` transparent padding on every side as a minimum mechanical check.
+- Use at least `12px` transparent padding above the character's highest hair/head point; use more when hair is spiky, hands are raised, or props sit near the top.
+- Captions, stroke outlines, shadows, action marks, moons, stars, leaves, and props must also stay inside the canvas; none may be clipped by the edge.
+- If a sticker fails the safe-area check, it is not upload-ready even if dimensions, alpha channel, and file size are otherwise valid.
+
+Validators should fail loudly when any final sticker has an alpha bounding box touching the edge or below the configured safe-area threshold. Review contact sheets are not enough; the validator should also report per-file bounding boxes or margins for suspect assets.
 
 ## Quality Bar
 
@@ -337,6 +359,7 @@ For every candidate pack, check:
 - Real transparency, not a baked checkerboard background
 - Caption text accuracy and readability
 - Clean individual crops with no adjacent-sticker residue
+- Safe-area compliance: no cropped or edge-touching hair, hands, shoes, props, caption strokes, or shadows.
 - Visual consistency across all stickers
 - Readability at small display sizes
 - No accidental copyrighted, trademarked, or personally sensitive content

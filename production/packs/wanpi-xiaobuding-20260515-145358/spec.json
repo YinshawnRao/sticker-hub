@@ -1,0 +1,382 @@
+{
+  "packId": "wanpi-xiaobuding-20260515-145358",
+  "mode": "production",
+  "title": "顽皮小布丁",
+  "titleCandidates": [
+    "顽皮小布丁",
+    "顽皮的小布丁",
+    "小布丁",
+    "顽皮布丁"
+  ],
+  "description": "一岁小布丁日常捣蛋，家里公园来回闯祸，偶尔卖萌让人消气。",
+  "copyright": "饶小虎",
+  "platform": "wechat-sticker-open-platform",
+  "createdAt": "2026-05-15T14:53:58+08:00",
+  "updatedAt": "2026-05-15T15:02:59+08:00",
+  "workflowPhase": "asset-generation",
+  "inputMode": {
+    "selected": "image-to-master",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "approved-for-production",
+    "card": "master/character-card.md",
+    "approvedImage": "master/approved/xiaobuding-approved-master.png",
+    "approvalRequired": true,
+    "approval": {
+      "partialConfirmedAt": "2026-05-15T15:02:59+08:00",
+      "captionPlanConfirmedAt": "2026-05-15T15:02:59+08:00",
+      "confirmedBy": "user",
+      "confirmedItems": [
+        "packName",
+        "lockedVisualTraits",
+        "homeAndParkSceneBoundary",
+        "captionAndVisualPlanFor18Stickers"
+      ],
+      "pendingItems": [
+        "wechatValidationBeforeUpload"
+      ],
+      "notes": "用户确认名称改为顽皮小布丁，确认母版固定识别特征，确认单张表情只保留少量道具提示、完整家里/公园场景主要放在 banner，并确认 18 张字幕与画面描述。2026-05-15 用户要求开始制作，母版卡进入生产生成阶段。"
+    },
+    "sourceImages": [
+      {
+        "id": "reference-1",
+        "role": "primary-master-reference",
+        "originalLocalPath": "/Users/yinshawnrao/Documents/Codex/2026-05-15/files-mentioned-by-the-user-clipboard/ip-character-output/ip-option-a-transparent.png",
+        "path": "source/references/master-reference-ip-option-a-transparent.png",
+        "masterInputPath": "master/input/master-source-ip-option-a-transparent.png",
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "hasAlpha": true,
+        "bytes": 824664
+      }
+    ],
+    "characterName": "小布丁",
+    "personality": "顽皮、机灵、爱搞小破坏，被发现后会装无辜和卖萌。",
+    "lockedTraits": [
+      "人类 1 岁幼儿角色，保持大头短身体比例，不能变成动物、玩偶、少年或成人。",
+      "圆润大额头、软圆脸、小鼻子、小嘴和圆耳朵保持稳定。",
+      "短黑发，顶部有细碎竖起发束，前额有短刘海，不换发色或发型。",
+      "大号深棕黑眼睛，带明显白色高光，眼神清澈偏无辜。",
+      "暖橙肤色，脸颊有轻微红润感，整体笔触柔和。",
+      "米白色宽松上衣、胸前黄色蜗牛图案、橄榄绿卷边裤和白色童鞋是主要服装识别点。",
+      "整体为温暖手绘卡通贴纸风格，边缘干净，适合透明背景导出。"
+    ],
+    "allowedVariations": [
+      "表情变化：开心、装乖、嘴硬、惊讶、委屈、偷笑、困倦、被抓包、继续玩。",
+      "姿态变化：挥手、张手求抱、叉腰狡辩、小跑、蹲下玩泥、滑梯、抱球、探头躲藏、坐地摔倒。",
+      "家里道具：积木、玩具篮、沙发抱枕、饭碗、小勺、软垫、散落玩具。",
+      "公园道具：草地小块、滑梯、皮球、树叶、小铲子、风车、低矮灌木。",
+      "构图变化：头像、半身、全身均可，但需要保留幼儿比例、脸部特征和核心服装。"
+    ],
+    "forbiddenVariations": [
+      "不得改变物种、年龄、脸型、主发型、主服装或整体手绘风格。",
+      "不得换成 3D、写实、厚涂、像素、赛博、欧美漫画等不一致风格。",
+      "不得添加未授权 IP、商标、品牌 logo、真实人物特征或无关角色。",
+      "不得让图像模型直接生成生产 captions；最终字幕必须来自 spec.json 并本地合成。",
+      "不得用完整复杂背景替代透明贴纸；单张贴纸只允许少量道具和小场景提示。",
+      "banner 不得含文字，且必须是不透明背景。",
+      "cover 和 icon 不得使用白底、硬方框、锯齿边缘或过厚白色外轮廓。"
+    ]
+  },
+  "wechatTarget": {
+    "packType": "static",
+    "stickerCount": 18,
+    "sheetCount": 2,
+    "stickersPerSheet": 9,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent"
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent"
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "noText": true
+    },
+    "form": {
+      "name": {
+        "value": "顽皮小布丁",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true,
+        "status": "valid"
+      },
+      "introduction": {
+        "value": "一岁小布丁日常捣蛋，家里公园来回闯祸，偶尔卖萌让人消气。",
+        "maxChineseChars": 80,
+        "status": "valid"
+      },
+      "copyright": {
+        "value": "饶小虎",
+        "maxChineseChars": 10,
+        "status": "valid"
+      }
+    }
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "rendering": "local-composition-preferred",
+    "status": "confirmed-for-production",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark brown",
+      "accentShadow": "warm yellow/brown",
+      "placement": "near lower part of each sticker without blocking key facial expression"
+    },
+    "items": [
+      {
+        "index": 1,
+        "fileBase": "01-mischief",
+        "caption": "捣蛋中",
+        "scene": "home",
+        "props": [
+          "blocks",
+          "toy basket"
+        ],
+        "pose": "蹲在散落积木旁，笑得有点心虚"
+      },
+      {
+        "index": 2,
+        "fileBase": "02-oops",
+        "caption": "糟糕啦",
+        "scene": "home",
+        "props": [
+          "tipped toy basket",
+          "scattered blocks"
+        ],
+        "pose": "站在翻倒玩具篮旁，积木滚了一地，双手捧脸装惊讶，闯祸但可爱"
+      },
+      {
+        "index": 3,
+        "fileBase": "03-good-boy",
+        "caption": "我很乖",
+        "scene": "home",
+        "props": [
+          "pillow",
+          "small star cue"
+        ],
+        "pose": "乖巧坐好，嘴角偷笑"
+      },
+      {
+        "index": 4,
+        "fileBase": "04-hug-me",
+        "caption": "抱抱我",
+        "scene": "home",
+        "props": [
+          "soft cushion"
+        ],
+        "pose": "张开小手求抱，表情软萌"
+      },
+      {
+        "index": 5,
+        "fileBase": "05-meal-time",
+        "caption": "开饭啦",
+        "scene": "home",
+        "props": [
+          "baby bowl",
+          "spoon"
+        ],
+        "pose": "捧着小碗开心张嘴"
+      },
+      {
+        "index": 6,
+        "fileBase": "06-i-dont-want",
+        "caption": "我不嘛",
+        "scene": "home",
+        "props": [
+          "floor mat",
+          "small pillow"
+        ],
+        "pose": "坐在地垫上抱紧小抱枕，身体微微后仰，小脚抵住地面，撅嘴撒娇拒绝"
+      },
+      {
+        "index": 7,
+        "fileBase": "07-caught",
+        "caption": "被发现啦",
+        "scene": "home",
+        "props": [
+          "sofa edge",
+          "messy toys"
+        ],
+        "pose": "从沙发或门边探出半个身子，旁边露出被弄乱的小玩具，眼睛睁大、嘴巴微张，像刚被抓包"
+      },
+      {
+        "index": 8,
+        "fileBase": "08-little-chaos",
+        "caption": "拆家啦",
+        "scene": "home",
+        "props": [
+          "toy basket",
+          "scattered plush toys"
+        ],
+        "pose": "站在散落玩具中间举手庆祝"
+      },
+      {
+        "index": 9,
+        "fileBase": "09-sleepy",
+        "caption": "困啦",
+        "scene": "home",
+        "props": [
+          "pillow",
+          "small moon cue"
+        ],
+        "pose": "抱枕打哈欠，眼皮下垂"
+      },
+      {
+        "index": 10,
+        "fileBase": "10-charge",
+        "caption": "冲呀",
+        "scene": "park",
+        "props": [
+          "grass patch",
+          "motion lines"
+        ],
+        "pose": "在草地上小跑，回头坏笑"
+      },
+      {
+        "index": 11,
+        "fileBase": "11-slide",
+        "caption": "滑梯冲",
+        "scene": "park",
+        "props": [
+          "small slide"
+        ],
+        "pose": "从小滑梯上开心滑下"
+      },
+      {
+        "index": 12,
+        "fileBase": "12-mud-king",
+        "caption": "泥巴王",
+        "scene": "park",
+        "props": [
+          "tiny mud patch",
+          "small shovel"
+        ],
+        "pose": "小手沾泥，骄傲举起小铲子"
+      },
+      {
+        "index": 13,
+        "fileBase": "13-play-sand",
+        "caption": "玩沙子",
+        "scene": "park",
+        "props": [
+          "small sand pit",
+          "small shovel"
+        ],
+        "pose": "蹲在小沙坑边，拿小铲子堆沙子，手上沾一点沙，表情专注又得意"
+      },
+      {
+        "index": 14,
+        "fileBase": "14-hide",
+        "caption": "躲起来啦",
+        "scene": "park",
+        "props": [
+          "low bush",
+          "small slide"
+        ],
+        "pose": "藏在滑梯后或低矮灌木旁，只露出脑袋和一只小手，像在玩捉迷藏"
+      },
+      {
+        "index": 15,
+        "fileBase": "15-dirty-hands",
+        "caption": "小手脏",
+        "scene": "park",
+        "props": [
+          "leaf",
+          "sand shovel"
+        ],
+        "pose": "举起脏脏小手，表情无辜"
+      },
+      {
+        "index": 16,
+        "fileBase": "16-fell-down",
+        "caption": "摔倒啦",
+        "scene": "park",
+        "props": [
+          "grass patch",
+          "ball"
+        ],
+        "pose": "坐在草地上抱球，眼眶委屈但可爱"
+      },
+      {
+        "index": 17,
+        "fileBase": "17-more-play",
+        "caption": "再玩会",
+        "scene": "park",
+        "props": [
+          "ball",
+          "grass patch"
+        ],
+        "pose": "抱着球不肯走，抬头撒娇"
+      },
+      {
+        "index": 18,
+        "fileBase": "18-hehe",
+        "caption": "嘿嘿嘿",
+        "scene": "park",
+        "props": [
+          "small flower",
+          "leaf"
+        ],
+        "pose": "双手捂嘴偷笑，脸颊更红"
+      }
+    ]
+  },
+  "assetPolicy": {
+    "doNotGenerateFinalStickersBeforeMasterApproval": true,
+    "doNotWriteProductionAssetsOutsidePackDirectory": true,
+    "uploadReadyAssetsOnlyUnder": "exports/wechat",
+    "intermediateOutputsMustStayInAssignedDirectories": true
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "packId": "mengmeng-xiaobuding-20260515-151905",
+  "mode": "production",
+  "title": "萌萌小布丁",
+  "description": "戴星星帽的小布丁，用奶萌表情表达日常聊天里的开心、委屈、惊讶和撒娇。",
+  "copyright": "饶小虎",
+  "platform": "wechat-sticker-open-platform",
+  "workflowPhase": "wechat-export-ready",
+  "inputMode": {
+    "selected": "image-to-master",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "sourceMaterial": {
+    "type": "user-provided-image",
+    "externalOriginal": "/Users/yinshawnrao/.codex/generated_images/019e2a6b-63ea-7111-851f-dbe4c92e5f7e/ig_021ea25024af4831016a06c74373c88191b2fa0dcc82f81885.png",
+    "archivedReference": "source/references/master-reference-original.png",
+    "masterInput": "master/input/master-reference-original.png",
+    "mediaFacts": {
+      "format": "PNG",
+      "width": 1449,
+      "height": 1086,
+      "alpha": false,
+      "approxSize": "1.3MB"
+    },
+    "notes": [
+      "Use this image as the master identity reference.",
+      "Do not place this original RGB image directly into exports/wechat.",
+      "Final stickers, cover, and icon must be transparent RGBA PNG assets at platform-required dimensions."
+    ]
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "approved-by-user-and-assets-generated",
+    "card": "master/character-card.md",
+    "approvedImage": "master/approved/xiaobuding-approved-master.png",
+    "approvalRequired": false,
+    "lockedTraits": [
+      "Human toddler character, cute baby proportions, round face and small body.",
+      "Short warm brown hair with soft fringe.",
+      "Large glossy dark brown eyes, small nose, small mouth, rosy cheeks.",
+      "Cream and navy star cap with navy brim, rounded ear-like side puffs, navy star pattern, and front smiling star badge.",
+      "Cream cardigan, beige striped bib collar with olive green trim, navy pants, white shoes with small red and green accents.",
+      "Soft polished illustration style with clean edges and warm shading."
+    ],
+    "allowedVariations": [
+      "Facial expressions and emotion intensity.",
+      "Pose, hand gestures, seated or half-body framing.",
+      "Small simple props that support the caption, such as tissue, pillow, bowl, spoon, milk bottle, toy block, or small flag.",
+      "Small scene cues, effects, or motion marks that do not become a full background."
+    ],
+    "forbiddenVariations": [
+      "Changing the character into an animal, adult, different child, or unrelated character.",
+      "Removing or redesigning the signature star cap.",
+      "Changing the dominant cream, navy, and warm beige color system.",
+      "Changing the face shape, eye style, or overall rendering style.",
+      "Adding unapproved logos, copyrighted IP, extra characters, or realistic photo elements.",
+      "Letting the image model invent final caption text."
+    ],
+    "approvalHistory": [
+      {
+        "at": "2026-05-15T16:26:58+08:00",
+        "status": "approved-by-user",
+        "source": "user confirmed master card and requested /goal production build"
+      }
+    ]
+  },
+  "wechatTarget": {
+    "packType": "static",
+    "stickerCount": 19,
+    "sheetCount": 3,
+    "stickersPerSheet": 9,
+    "reviewSheetLayout": {
+      "grid": "3x3",
+      "itemsPerSheet": [
+        9,
+        9,
+        1
+      ],
+      "notes": "Use two full 3x3 review sheets plus one partial 3x3 review sheet for the 19th sticker. Empty cells must not be exported as stickers."
+    },
+    "stickersLockedUntilMasterApproval": true,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent"
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent"
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "noText": true
+    },
+    "form": {
+      "name": {
+        "value": "萌萌小布丁",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true
+      },
+      "introduction": {
+        "value": "戴星星帽的小布丁，用奶萌表情表达日常聊天里的开心、委屈、惊讶和撒娇。",
+        "maxChineseChars": 80
+      },
+      "copyright": {
+        "value": "饶小虎",
+        "maxChineseChars": 10
+      }
+    }
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "rendering": "local-composition-preferred",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark navy or dark brown",
+      "accentShadow": "warm yellow or soft brown",
+      "placement": "lower part of each sticker, never blocking eyes, mouth, hands, or the main expression"
+    },
+    "items": [
+      {
+        "index": 1,
+        "text": "嗨呀",
+        "label": "hi",
+        "emotion": "friendly greeting",
+        "pose": "front-facing wave with bright eyes",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 2,
+        "text": "在吗",
+        "label": "are-you-there",
+        "emotion": "curious check-in",
+        "pose": "peeking from behind a small door or toy blocks, curious eyes, one hand holding the edge",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 3,
+        "text": "开心",
+        "label": "happy",
+        "emotion": "joy",
+        "pose": "big smile, raised hands, small bounce marks",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 4,
+        "text": "委屈",
+        "label": "wronged",
+        "emotion": "grievance",
+        "pose": "teary eyes, small pout, curled hands",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 5,
+        "text": "生气啦",
+        "label": "angry",
+        "emotion": "cute anger",
+        "pose": "puffed cheeks, tiny stomping pose, steam marks",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 6,
+        "text": "惊呆了",
+        "label": "shocked",
+        "emotion": "surprise",
+        "pose": "wide eyes, open mouth, hands near cheeks",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 7,
+        "text": "哭哭",
+        "label": "crying",
+        "emotion": "crying",
+        "pose": "big tears, holding tissue",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 8,
+        "text": "要抱抱",
+        "label": "hug",
+        "emotion": "seeking comfort",
+        "pose": "arms reaching forward",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 9,
+        "text": "好的",
+        "label": "ok",
+        "emotion": "agreement",
+        "pose": "nodding, one hand making a small OK gesture",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 10,
+        "text": "不要",
+        "label": "no",
+        "emotion": "refusal",
+        "pose": "shaking head, small hands crossed",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 11,
+        "text": "偷笑",
+        "label": "giggle",
+        "emotion": "mischievous smile",
+        "pose": "covering mouth with one hand",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 12,
+        "text": "害羞",
+        "label": "shy",
+        "emotion": "shyness",
+        "pose": "rosy cheeks, looking sideways",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 13,
+        "text": "困困",
+        "label": "sleepy",
+        "emotion": "sleepiness",
+        "pose": "rubbing eyes, holding small pillow",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 14,
+        "text": "加油",
+        "label": "cheer",
+        "emotion": "encouragement",
+        "pose": "raising a tiny flag or fist",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 15,
+        "text": "谢谢",
+        "label": "thanks",
+        "emotion": "gratitude",
+        "pose": "small bow or holding a heart",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 16,
+        "text": "求求了",
+        "label": "please",
+        "emotion": "pleading",
+        "pose": "hands together, sparkling eyes",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 17,
+        "text": "我错了",
+        "label": "sorry",
+        "emotion": "apology",
+        "pose": "lowered head, small remorseful expression",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 18,
+        "text": "开饭啦",
+        "label": "meal",
+        "emotion": "food excitement",
+        "pose": "holding a small bowl and spoon",
+        "status": "approved-by-user"
+      },
+      {
+        "index": 19,
+        "text": "拜拜",
+        "label": "bye",
+        "emotion": "farewell",
+        "pose": "waving goodbye with soft smile",
+        "status": "approved-by-user"
+      }
+    ],
+    "status": "locked-for-production"
+  },
+  "assets": {
+    "wechatExport": {
+      "root": "exports/wechat",
+      "stickersDir": "exports/wechat/stickers",
+      "cover": "exports/wechat/cover.png",
+      "icon": "exports/wechat/icon.png",
+      "banner": "exports/wechat/banner.png",
+      "metadata": "exports/wechat/metadata.json",
+      "form": "exports/wechat/form.md",
+      "generatedAt": "2026-05-15T16:26:58+08:00",
+      "uploadReady": true,
+      "validationReport": "review/wechat/validation-report.json"
+    }
+  },
+  "validation": {
+    "officialSpecCheckedAt": "2026-05-14 user-provided-upload-form-screenshots; live official re-check required before real production submission",
+    "masterChecks": [
+      "input-mode-selected",
+      "master-character-card-exists",
+      "master-character-locks-identity-traits",
+      "master-character-defines-allowed-variations",
+      "master-character-defines-forbidden-variations",
+      "user-approval-recorded-before-final-sticker-production"
+    ],
+    "wechatChecks": [
+      "pack-type-is-static",
+      "sticker-count-is-19",
+      "all-stickers-exist",
+      "all-stickers-are-png",
+      "all-stickers-are-240x240",
+      "all-stickers-have-alpha",
+      "all-stickers-have-transparent-corners",
+      "all-stickers-under-500kb",
+      "cover-exists",
+      "cover-is-png-240x240-transparent-under-500kb",
+      "icon-exists",
+      "icon-is-png-50x50-transparent-under-100kb",
+      "banner-exists",
+      "banner-is-750x400-opaque-under-500kb",
+      "banner-has-no-text",
+      "form-name-under-8-chinese-chars-no-punctuation-no-spaces",
+      "form-introduction-under-80-chinese-chars",
+      "form-copyright-under-10-chinese-chars",
+      "metadata-json-exists",
+      "form-md-exists",
+      "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
+    ]
+  }
+}

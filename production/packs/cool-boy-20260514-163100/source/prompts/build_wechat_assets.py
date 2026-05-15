@@ -26,6 +26,7 @@ REVIEW_SHEETS_DIR = ROOT / "review" / "sheets"
 REVIEW_WECHAT_DIR = ROOT / "review" / "wechat"
 EXPORT_DIR = ROOT / "exports" / "wechat"
 EXPORT_STICKERS_DIR = EXPORT_DIR / "stickers"
+ICON_SOURCE_INDEX = 5
 
 FONT_CANDIDATES = [
     "/System/Library/Fonts/STHeiti Medium.ttc",
@@ -318,11 +319,14 @@ def make_icon(source_crop: Image.Image) -> Image.Image:
         left, top, right, bottom = bbox
         h = bottom - top
         w = right - left
+        # Chat icons render very small. Keep only the clean face and a little
+        # shoulder area so props, caption space, and decorative marks do not
+        # make the character shrink in WeChat.
         head_box = (
-            max(0, left - int(w * 0.10)),
-            max(0, top - int(h * 0.04)),
-            min(source_crop.width, right + int(w * 0.10)),
-            min(source_crop.height, top + int(h * 0.48)),
+            max(0, left - int(w * 0.08)),
+            max(0, top - int(h * 0.03)),
+            min(source_crop.width, right + int(w * 0.08)),
+            min(source_crop.height, top + int(h * 0.62)),
         )
         head = crop_nontransparent(source_crop.crop(head_box), pad=2)
     canvas = Image.new("RGBA", (50, 50), (0, 0, 0, 0))
@@ -645,7 +649,7 @@ def main() -> None:
         save_png(REVIEW_SHEETS_DIR / f"sheet-{sheet_idx + 1:02d}-review.png", review_bg)
 
     cover = make_cover(source_crops[4])
-    icon = make_icon(source_crops[4])
+    icon = make_icon(source_crops[ICON_SOURCE_INDEX])
     banner = make_banner(source_crops)
 
     save_png(EXPORT_DIR / "cover.png", cover, max_bytes=512000)

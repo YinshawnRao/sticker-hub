@@ -12,6 +12,16 @@
 - Raw generated sheet 2: `generated/sheets/raw/sheet-02-raw-ai.png`
 - Raw generated single sticker: `generated/sheets/raw/sheet-03-single-raw-ai.png`
 
+## Expression Refresh
+
+- Refreshed at: 2026-05-15.
+- Reason: user review found that several facial expressions, especially 1, 2, 3, 9, 14, and 15, were too similar and did not strongly express the Chinese semantic emotion.
+- Built-in generated source sheet 1: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06dfd53ac88191abda06d0e1570de3.png`
+- Built-in generated source sheet 2: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06e043e3f481918716d49a9b3ca55a.png`
+- Built-in generated source single sticker: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06e0a8b13c81919624d22344a41bb5.png`
+- Previous raw sheets and contact sheets were backed up under `review/stickers/expression-before-20260515/`.
+- Local cleanup removes the generated yellow question mark from sticker 02 and isolated top residue from sticker 04 before final export.
+
 ## Key Prompt Constraints
 
 - Preserve the toddler identity from the reference image.
@@ -19,3 +29,4 @@
 - Generate no final caption text in the image model output.
 - Use a perfectly flat `#00ff00` chroma-key background for local alpha extraction.
 - Compose exact Chinese captions locally from `spec.json`.
+- Make the emotion differences visible in eyebrows, eyelids, eye shape, mouth shape, cheeks, tears, head angle, and pose.

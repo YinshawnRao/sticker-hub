@@ -1,0 +1,418 @@
+{
+  "packId": "xiazi-daily-20260515-174410",
+  "mode": "production",
+  "title": "霞子的日常",
+  "description": "爱看书爱旅行也认真工作的霞子把生活里的小情绪都画成表情",
+  "copyright": "饶小虎",
+  "platform": "wechat-sticker-open-platform",
+  "workflowPhase": "wechat-export-generated",
+  "status": "wechat-export-generated-pending-human-review",
+  "createdAt": "2026-05-15",
+  "createdAtLocal": "2026-05-15 17:44:10 Asia/Shanghai",
+  "inputMode": {
+    "selected": "image-to-master",
+    "supported": [
+      "text-to-master",
+      "image-to-master"
+    ],
+    "requiresMasterApprovalBeforeStickerProduction": true
+  },
+  "sourceMaterial": {
+    "type": "image",
+    "status": "captured-and-used-for-master-character",
+    "originalLocalPath": "/Users/yinshawnrao/Pictures/表情包/000mother/cx.png",
+    "referenceImages": [
+      {
+        "path": "source/references/cx-reference.png",
+        "role": "source-reference-copy",
+        "format": "PNG",
+        "width": 1024,
+        "height": 1024,
+        "color": "RGBA",
+        "hasAlpha": true,
+        "bytes": 1686861
+      }
+    ],
+    "masterInputImages": [
+      {
+        "path": "master/input/cx-master-reference.png",
+        "role": "master-character-input-copy",
+        "format": "PNG",
+        "width": 1024,
+        "height": 1024,
+        "color": "RGBA",
+        "hasAlpha": true,
+        "bytes": 1686861
+      }
+    ],
+    "notes": [
+      "The user-provided master/reference image is the source of truth for character identity.",
+      "The source image is reference material only and must not be used directly as a WeChat upload asset.",
+      "Source/reference intake writes only to source/references and master/input.",
+      "Do not generate final sticker sheets or the final 18 independent sticker images until the master character card and master image are approved."
+    ]
+  },
+  "theme": {
+    "summary": "young woman Xiazi's grounded daily life across reading, travel, work, and small everyday emotions",
+    "tone": [
+      "friendly",
+      "relatable",
+      "warm",
+      "energetic",
+      "daily-life",
+      "light-workplace"
+    ],
+    "avoid": [
+      "photorealistic portrait style",
+      "celebrity resemblance",
+      "overly polished corporate mascot feeling",
+      "exhausted overtime complaint theme",
+      "unrelated characters",
+      "unapproved logos or copyrighted IP",
+      "personally sensitive content"
+    ]
+  },
+  "taskDirectories": {
+    "sourceReferences": "source/references",
+    "sourcePrompts": "source/prompts",
+    "masterInput": "master/input",
+    "masterCandidates": "master/candidates",
+    "masterApproved": "master/approved",
+    "masterCard": "master/character-card.md",
+    "rawSheets": "generated/sheets/raw",
+    "captionedSheets": "generated/sheets/captioned",
+    "sourceCrops": "generated/stickers/source-crops",
+    "wechatDraftStickers": "generated/stickers/wechat-draft",
+    "reviewMaster": "review/master",
+    "reviewSheets": "review/sheets",
+    "reviewStickers": "review/stickers",
+    "reviewWechat": "review/wechat",
+    "wechatExport": "exports/wechat"
+  },
+  "masterCharacter": {
+    "status": "approved-for-asset-production-by-user-generation-command",
+    "card": "master/character-card.md",
+    "approvedImage": "master/approved/xiazi-approved-master.png",
+    "approvalRequired": true,
+    "finalStickerProductionAllowed": true,
+    "draftName": "霞子",
+    "shortPersonality": "warm, energetic, curious, practical, broad-interested, slightly workaholic",
+    "lockedTraits": [
+      "young female human chibi character",
+      "front-friendly rounded face",
+      "large round dark-brown eyes with bright catchlights",
+      "small dot nose",
+      "wide open happy smile with pink mouth interior",
+      "soft pink cheek blush",
+      "dark brown to near-black shoulder-length hair",
+      "rounded hair silhouette with straight bangs and side strands",
+      "cream sleeveless lace or knit top as the base outfit",
+      "warm skin tone",
+      "thick dark brown sticker outline",
+      "soft warm anime/chibi rendering with clean simple fills"
+    ],
+    "allowedVariations": [
+      "facial expression within the same Xiazi identity",
+      "pose and hand gesture",
+      "small lifestyle props such as book, suitcase, camera, map, laptop, notebook, checklist, coffee cup, calendar, phone, headset, or lightbulb",
+      "simple scene cues related to reading, travel, work, rest, or daily greetings",
+      "minor outfit additions such as cardigan, scarf, backpack, or travel bag when they do not cover or replace the locked identity traits",
+      "caption-specific action marks, sparkles, sweat drop, motion marks, or small hearts when kept inside the safe area"
+    ],
+    "forbiddenVariations": [
+      "changing Xiazi into an animal, mascot object, robot, or another species",
+      "changing age impression away from young woman",
+      "changing the hair length, bangs structure, dark hair color identity, face shape, large round eyes, blush style, or warm chibi rendering without approval",
+      "removing the approachable everyday personality and turning the pack into a distant fashion portrait set",
+      "adding unrelated characters",
+      "adding unapproved logos, trademarks, copyrighted IP, or personally sensitive content",
+      "using photorealistic rendering",
+      "using a dark, bitter, or complaint-heavy overtime theme as the main direction",
+      "letting image generation invent, rewrite, or misspell production captions",
+      "placing final sticker, cover, or icon content on a baked white, checkerboard, or square background"
+    ]
+  },
+  "wechatTarget": {
+    "packType": "static",
+    "stickerCount": 18,
+    "sheetCount": 2,
+    "stickersPerSheet": 9,
+    "sticker": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent",
+      "countRange": {
+        "min": 8,
+        "max": 24
+      },
+      "safeArea": {
+        "minPaddingPx": 8,
+        "minTopPaddingPx": 12
+      }
+    },
+    "cover": {
+      "format": "PNG",
+      "width": 240,
+      "height": 240,
+      "maxBytes": 512000,
+      "background": "transparent"
+    },
+    "icon": {
+      "format": "PNG",
+      "width": 50,
+      "height": 50,
+      "maxBytes": 102400,
+      "background": "transparent"
+    },
+    "banner": {
+      "formats": [
+        "JPG",
+        "PNG"
+      ],
+      "width": 750,
+      "height": 400,
+      "maxBytes": 512000,
+      "background": "opaque",
+      "count": 1,
+      "noText": true
+    },
+    "form": {
+      "name": {
+        "value": "霞子的日常",
+        "maxChineseChars": 8,
+        "recommendedChineseChars": 5,
+        "noPunctuation": true,
+        "noSpaces": true,
+        "initialCheck": "pass"
+      },
+      "introduction": {
+        "value": "爱看书爱旅行也认真工作的霞子把生活里的小情绪都画成表情",
+        "maxChineseChars": 80,
+        "initialCheck": "pass"
+      },
+      "copyright": {
+        "value": "饶小虎",
+        "maxChineseChars": 10,
+        "initialCheck": "pass"
+      }
+    }
+  },
+  "captions": {
+    "language": "zh-Hans",
+    "status": "approved-for-production-by-user-generation-command",
+    "rendering": "local-composition-preferred",
+    "style": {
+      "fill": "white",
+      "outline": "thick dark brown",
+      "accentShadow": "warm yellow or peach",
+      "placement": "near lower part of each sticker without blocking eyes, mouth, hands, or main expression"
+    },
+    "items": [
+      {
+        "id": 1,
+        "slug": "hello",
+        "text": "你好呀",
+        "scenario": "general chat greeting, suitable for opening a conversation with friends or colleagues without emphasizing a specific time of day",
+        "pose": "Xiazi waves with a bright smile, holding a small book or phone, with light friendly sparkle"
+      },
+      {
+        "id": 2,
+        "slug": "received",
+        "text": "收到",
+        "scenario": "acknowledging a message, task, reminder, or arrangement",
+        "pose": "Xiazi holds a checklist card with a confident nod and a clear checkmark"
+      },
+      {
+        "id": 3,
+        "slug": "reviewing",
+        "text": "我看看",
+        "scenario": "about to review a document, message, plan, photo, or travel guide before replying",
+        "pose": "Xiazi leans toward an open notebook or laptop, eyes focused, one hand near her chin"
+      },
+      {
+        "id": 4,
+        "slug": "coming",
+        "text": "马上来",
+        "scenario": "responding when someone calls her over, asks for help, or invites her to join",
+        "pose": "Xiazi hurries forward with a small bag, motion marks, and an eager expression"
+      },
+      {
+        "id": 5,
+        "slug": "focused",
+        "text": "认真中",
+        "scenario": "focused work mode, reading materials, writing notes, or dealing with a deadline",
+        "pose": "Xiazi sits at a laptop with notes beside her, eyebrows slightly focused but cute"
+      },
+      {
+        "id": 6,
+        "slug": "idea",
+        "text": "灵感来了",
+        "scenario": "suddenly getting an idea while working, reading, or planning a trip",
+        "pose": "Xiazi raises one finger with a small lightbulb and sparkle above her head"
+      },
+      {
+        "id": 7,
+        "slug": "hard",
+        "text": "有点难",
+        "scenario": "facing a tricky task, confusing plan, complicated route, or hard book chapter",
+        "pose": "Xiazi looks at scattered papers with a small sweat drop, still trying seriously"
+      },
+      {
+        "id": 8,
+        "slug": "done",
+        "text": "搞定啦",
+        "scenario": "finishing a task, booking a trip, solving a problem, or completing a small goal",
+        "pose": "Xiazi jumps happily with a checkmark card and celebratory stars"
+      },
+      {
+        "id": 9,
+        "slug": "thanks",
+        "text": "谢谢你",
+        "scenario": "thanking someone for help, support, reminders, or encouragement",
+        "pose": "Xiazi makes a small bow or heart gesture with a soft grateful smile"
+      },
+      {
+        "id": 10,
+        "slug": "cheer",
+        "text": "加油呀",
+        "scenario": "encouraging a friend, teammate, or herself before work, study, or travel",
+        "pose": "Xiazi raises both fists with energetic sparkle and a determined smile"
+      },
+      {
+        "id": 11,
+        "slug": "reading",
+        "text": "看书中",
+        "scenario": "quiet reading time, studying, relaxing at home, or staying offline for a bit",
+        "pose": "Xiazi reads an open book with relaxed eyes, small page-turning marks nearby"
+      },
+      {
+        "id": 12,
+        "slug": "depart",
+        "text": "出发啦",
+        "scenario": "leaving for a trip, commute, outing, or new plan",
+        "pose": "Xiazi carries a suitcase or backpack, steps forward, and looks excited"
+      },
+      {
+        "id": 13,
+        "slug": "snapshot",
+        "text": "拍一下",
+        "scenario": "taking a travel photo, recording food, scenery, books, or daily moments",
+        "pose": "Xiazi holds a camera or phone, framing a shot with playful focus"
+      },
+      {
+        "id": 14,
+        "slug": "break",
+        "text": "休息一下",
+        "scenario": "taking a short break from work, reading, chatting, or traveling",
+        "pose": "Xiazi stretches with a cup or book nearby, expression relaxed and relieved"
+      },
+      {
+        "id": 15,
+        "slug": "wait",
+        "text": "等一下",
+        "scenario": "asking the other person to wait briefly while Xiazi checks information, packs up, or catches up with the conversation",
+        "pose": "Xiazi raises one hand in a wait gesture while holding a phone or notebook, with a small clock cue"
+      },
+      {
+        "id": 16,
+        "slug": "later",
+        "text": "晚点回",
+        "scenario": "busy at work, on the road, reading, or temporarily unable to respond",
+        "pose": "Xiazi holds a phone with an apologetic smile and small clock cue"
+      },
+      {
+        "id": 17,
+        "slug": "yay",
+        "text": "好耶",
+        "scenario": "reacting to good news, agreeing to a plan, confirming a trip idea, or celebrating a pleasant little moment",
+        "pose": "Xiazi raises both hands happily with bright stars or small hearts, expression excited and cute"
+      },
+      {
+        "id": 18,
+        "slug": "offwork",
+        "text": "下班啦",
+        "scenario": "ending the workday and switching back to personal life",
+        "pose": "Xiazi waves with a small shoulder bag, warm sunset-like sparkle, relaxed happy face"
+      }
+    ]
+  },
+  "assets": {
+    "wechatExport": {
+      "root": "exports/wechat",
+      "stickersDir": "exports/wechat/stickers",
+      "cover": "exports/wechat/cover.png",
+      "icon": "exports/wechat/icon.png",
+      "banner": "exports/wechat/banner.png",
+      "metadata": "exports/wechat/metadata.json",
+      "form": "exports/wechat/form.md"
+    },
+    "generated": {
+      "approvedMaster": "master/approved/xiazi-approved-master.png",
+      "rawSheets": [
+        "generated/sheets/raw/sheet-01-raw.png",
+        "generated/sheets/raw/sheet-02-raw.png"
+      ],
+      "captionedSheets": [
+        "generated/sheets/captioned/sheet-01-captioned.png",
+        "generated/sheets/captioned/sheet-02-captioned.png"
+      ],
+      "review": [
+        "review/master/master-reference-review.png",
+        "review/stickers/source-crops-contact-sheet.png",
+        "review/stickers/final-stickers-contact-sheet.png",
+        "review/wechat/export-assets-overview.png",
+        "review/wechat/validation-report.json",
+        "review/wechat/validation-report.md",
+        "review/wechat/official-spec-check.md"
+      ]
+    }
+  },
+  "validation": {
+    "officialSpecCheckedAt": "2026-05-15T18:14:43+08:00 official page attempted from current environment; local AGENTS.md upload contract applied because official page was not readable",
+    "initialFormChecks": [
+      "name-pass-5-chinese-chars-no-punctuation-no-spaces",
+      "introduction-pass-under-80-chinese-chars",
+      "copyright-pass-under-10-chinese-chars"
+    ],
+    "knownSourceLimitations": [
+      "source-image-is-1024x1024-not-final-upload-size",
+      "source-image-file-is-over-500kb-but-reference-only",
+      "source-image-visually-includes-background-final-stickers-cover-icon-must-be-transparent"
+    ],
+    "masterChecks": [
+      "input-mode-selected",
+      "master-character-card-exists",
+      "master-character-locks-identity-traits",
+      "master-character-defines-allowed-variations",
+      "master-character-defines-forbidden-variations",
+      "user-approval-recorded-before-final-sticker-production"
+    ],
+    "wechatChecks": [
+      "pack-type-is-static",
+      "sticker-count-is-18",
+      "all-stickers-exist",
+      "all-stickers-are-png",
+      "all-stickers-are-240x240",
+      "all-stickers-have-alpha",
+      "all-stickers-have-transparent-corners",
+      "all-stickers-under-500kb",
+      "all-stickers-pass-safe-area-padding",
+      "cover-exists",
+      "cover-is-png-240x240-transparent-under-500kb",
+      "icon-exists",
+      "icon-is-png-50x50-transparent-under-100kb",
+      "banner-exists",
+      "banner-is-750x400-opaque-under-500kb",
+      "banner-has-no-text",
+      "form-name-under-8-chinese-chars-no-punctuation-no-spaces",
+      "form-introduction-under-80-chinese-chars",
+      "form-copyright-under-10-chinese-chars",
+      "metadata-json-exists",
+      "form-md-exists",
+      "manual-review-cover-and-icon-have-no-white-background-or-square-frame"
+    ]
+  },
+  "generatedAt": "2026-05-15T18:14:43+08:00"
+}

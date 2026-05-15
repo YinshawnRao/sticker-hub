@@ -275,6 +275,45 @@ def remove_sleep_text_marks(image: Image.Image) -> Image.Image:
     return Image.fromarray(arr, "RGBA")
 
 
+def remove_yellow_question_mark(image: Image.Image) -> Image.Image:
+    rgba = image.convert("RGBA")
+    arr = np.array(rgba)
+    alpha = arr[..., 3]
+    red = arr[..., 0].astype(np.int16)
+    green = arr[..., 1].astype(np.int16)
+    blue = arr[..., 2].astype(np.int16)
+    yellow_mark = (alpha > 8) & (red > 180) & (green > 140) & (blue < 90) & ((red - blue) > 120)
+    for component in connected_components(yellow_mark):
+        if component["area"] < 15000:
+            ys = [p[0] for p in component["pixels"]]
+            xs = [p[1] for p in component["pixels"]]
+            alpha[ys, xs] = 0
+    arr[..., 3] = alpha
+    return Image.fromarray(arr, "RGBA")
+
+
+def remove_components_above_main(image: Image.Image) -> Image.Image:
+    rgba = image.convert("RGBA")
+    arr = np.array(rgba)
+    alpha = arr[..., 3]
+    components = [c for c in connected_components(alpha > 8) if c["area"] >= 20]
+    if len(components) <= 1:
+        return rgba
+
+    main = max(components, key=lambda c: c["area"])
+    main_top = main["bbox"][1]
+    for component in components:
+        if component is main:
+            continue
+        _, _, _, bottom = component["bbox"]
+        if bottom <= main_top:
+            ys = [p[0] for p in component["pixels"]]
+            xs = [p[1] for p in component["pixels"]]
+            alpha[ys, xs] = 0
+    arr[..., 3] = alpha
+    return Image.fromarray(arr, "RGBA")
+
+
 def clear_edges(image: Image.Image, margin: int = 8) -> Image.Image:
     rgba = image.convert("RGBA")
     alpha = rgba.getchannel("A")
@@ -332,7 +371,7 @@ def compose_sticker(crop: Image.Image, item: StickerItem) -> Image.Image:
     subject = contain(clean, max_w, max_h)
     canvas = Image.new("RGBA", (480, 480), (0, 0, 0, 0))
     x = (480 - subject.width) // 2
-    y = 16 if subject.height >= 315 else 30
+    y = 30 if subject.height >= 315 else 36
     canvas.alpha_composite(subject, (x, y))
     draw_caption(canvas, item.caption)
     return canvas.resize((240, 240), Image.Resampling.LANCZOS)
@@ -381,6 +420,10 @@ def build_stickers(items: list[StickerItem]) -> tuple[list[Path], list[Image.Ima
     for item, crop in zip(items, cells):
         if item.slug == "sleepy":
             crop = remove_sleep_text_marks(crop)
+        if item.slug == "are-you-there":
+            crop = remove_yellow_question_mark(crop)
+        if item.slug == "wronged":
+            crop = remove_components_above_main(crop)
         source_path = SOURCE_CROPS_DIR / item.filename
         save_png(source_path, crop)
 
@@ -751,6 +794,16 @@ def write_generation_record() -> None:
 - Raw generated sheet 2: `generated/sheets/raw/sheet-02-raw-ai.png`
 - Raw generated single sticker: `generated/sheets/raw/sheet-03-single-raw-ai.png`
 
+## Expression Refresh
+
+- Refreshed at: 2026-05-15.
+- Reason: user review found that several facial expressions, especially 1, 2, 3, 9, 14, and 15, were too similar and did not strongly express the Chinese semantic emotion.
+- Built-in generated source sheet 1: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06dfd53ac88191abda06d0e1570de3.png`
+- Built-in generated source sheet 2: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06e043e3f481918716d49a9b3ca55a.png`
+- Built-in generated source single sticker: `/Users/yinshawnrao/.codex/generated_images/019e2ad8-b561-7940-9d02-d0407fbfca04/ig_030e0f88d9d60521016a06e0a8b13c81919624d22344a41bb5.png`
+- Previous raw sheets and contact sheets were backed up under `review/stickers/expression-before-20260515/`.
+- Local cleanup removes the generated yellow question mark from sticker 02 and isolated top residue from sticker 04 before final export.
+
 ## Key Prompt Constraints
 
 - Preserve the toddler identity from the reference image.
@@ -758,6 +811,7 @@ def write_generation_record() -> None:
 - Generate no final caption text in the image model output.
 - Use a perfectly flat `#00ff00` chroma-key background for local alpha extraction.
 - Compose exact Chinese captions locally from `spec.json`.
+- Make the emotion differences visible in eyebrows, eyelids, eye shape, mouth shape, cheeks, tears, head angle, and pose.
 """
     (PACK_ROOT / "source" / "prompts" / "generation-record.md").write_text(record, encoding="utf-8")
 

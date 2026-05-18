@@ -78,7 +78,7 @@
     ],
     "approvalHistory": [
       {
-        "at": "2026-05-15T17:16:36+08:00",
+        "at": "2026-05-18T10:58:49+08:00",
         "status": "approved-by-user",
         "source": "user confirmed master card and requested /goal production build"
       }
@@ -328,7 +328,7 @@
       "banner": "exports/wechat/banner.png",
       "metadata": "exports/wechat/metadata.json",
       "form": "exports/wechat/form.md",
-      "generatedAt": "2026-05-15T17:16:36+08:00",
+      "generatedAt": "2026-05-18T10:58:49+08:00",
       "uploadReady": true,
       "validationReport": "review/wechat/validation-report.json"
     }
@@ -354,8 +354,12 @@
       "all-stickers-under-500kb",
       "cover-exists",
       "cover-is-png-240x240-transparent-under-500kb",
+      "cover-alpha-bbox-has-safe-padding",
+      "manual-review-cover-is-frontal-upper-body-no-action-decorations",
       "icon-exists",
       "icon-is-png-50x50-transparent-under-100kb",
+      "icon-alpha-bbox-has-padding",
+      "manual-review-icon-is-frontal-head-only-no-text-or-decorations",
       "banner-exists",
       "banner-is-750x400-opaque-under-500kb",
       "banner-has-no-text",

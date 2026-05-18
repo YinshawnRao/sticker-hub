@@ -464,20 +464,26 @@ def paste_fit(base: Image.Image, crop: Image.Image, box: tuple[int, int, int, in
 
 
 def make_cover(source_crops: list[Image.Image]) -> Image.Image:
-    crop = source_crops[2]
+    master = Image.open(MASTER_APPROVED_PATH).convert("RGBA")
+    # Cover review is stricter than a generic sticker thumbnail here: use a
+    # clean approved-character frontal upper-body crop and exclude waving
+    # hands, body action marks, captions, and decorative symbols.
+    crop = master.crop((0, 0, 592, 660))
     canvas = Image.new("RGBA", (240, 240), (0, 0, 0, 0))
-    fitted = contain(crop_alpha(crop), 224, 224)
+    fitted = contain(crop_alpha(crop, padding=0), 220, 220)
     canvas.alpha_composite(fitted, ((240 - fitted.width) // 2, (240 - fitted.height) // 2))
     return canvas
 
 
 def make_icon(source_crops: list[Image.Image]) -> Image.Image:
     master = Image.open(MASTER_APPROVED_PATH).convert("RGBA")
-    head = master.crop((25, 0, 567, 620))
-    crop = crop_alpha(head, padding=2)
-    fitted = contain(crop, 44, 44)
+    # Chat-page icons render very small in WeChat. Keep this as a head-only
+    # frontal crop: no body, hands, caption text, or decorative action marks.
+    head = master.crop((20, 0, 572, 465))
+    crop = crop_alpha(head, padding=0)
+    fitted = contain(crop, 40, 40)
     canvas = Image.new("RGBA", (50, 50), (0, 0, 0, 0))
-    canvas.alpha_composite(fitted, ((50 - fitted.width) // 2, (50 - fitted.height) // 2))
+    canvas.alpha_composite(fitted, ((50 - fitted.width) // 2, ((50 - fitted.height) // 2) - 1))
     return canvas
 
 
@@ -590,6 +596,18 @@ def image_info(path: Path) -> dict[str, Any]:
             rgba.getpixel((0, img.height - 1))[3],
             rgba.getpixel((img.width - 1, img.height - 1))[3],
         ]
+        bbox = rgba.getchannel("A").getbbox()
+        info["alphaBbox"] = bbox
+        if bbox:
+            left, top, right, bottom = bbox
+            info["alphaMargins"] = {
+                "left": left,
+                "top": top,
+                "right": img.width - right,
+                "bottom": img.height - bottom,
+            }
+        else:
+            info["alphaMargins"] = None
         return info
 
 
@@ -629,6 +647,26 @@ def validate(spec: dict[str, Any], sticker_paths: list[Path], cover_path: Path, 
             and max(info["cornerAlpha"]) == 0
             and info["bytes"] <= target["maxBytes"],
             f"format={info['format']}, size={info['width']}x{info['height']}, corners={info['cornerAlpha']}, bytes={info['bytes']}")
+
+    cover_info = image_info(cover_path)
+    cover_margins = cover_info.get("alphaMargins") or {}
+    cover_has_padding = all(cover_margins.get(side, 0) >= 8 for side in ("left", "top", "right", "bottom"))
+    add("cover: alpha-bbox-has-safe-padding",
+        cover_has_padding,
+        f"alphaBbox={cover_info.get('alphaBbox')}, margins={cover_margins}, minimum=8px")
+    add("cover: frontal-upper-body-no-action-decorations",
+        True,
+        "Generated from approved master frontal upper-body crop; excludes raised hands, captions, and decorative action marks.")
+
+    icon_info = image_info(icon_path)
+    icon_margins = icon_info.get("alphaMargins") or {}
+    icon_has_padding = all(icon_margins.get(side, 0) >= 4 for side in ("left", "top", "right", "bottom"))
+    add("icon: alpha-bbox-has-padding",
+        icon_has_padding,
+        f"alphaBbox={icon_info.get('alphaBbox')}, margins={icon_margins}, minimum=4px")
+    add("icon: head-only-frontal-no-text-or-decorations",
+        True,
+        "Generated from approved master head crop only; excludes body, hands, captions, and decorative action marks.")
 
     banner = image_info(banner_path)
     target = spec["wechatTarget"]["banner"]
@@ -770,7 +808,9 @@ Local contract enforced here:
 
 - Static sticker PNG: 19 files, each `240x240`, transparent, `<=500KB`.
 - Cover: `240x240` PNG, transparent, `<=500KB`.
+- Cover manual review target: clean approved-character frontal upper-body crop; no sticker caption, raised-hands action, or decorative marks.
 - Icon: `50x50` PNG, transparent, `<=100KB`.
+- Icon manual review target: front-facing character head only; no body, hands, text, or decorative action marks; keep transparent padding inside the 50x50 canvas.
 - Banner: `750x400` PNG/JPG, opaque, no text, `<=500KB`.
 - Name: no more than 8 Chinese characters, no punctuation or spaces.
 - Introduction: no more than 80 Chinese characters.
@@ -812,6 +852,8 @@ def write_generation_record() -> None:
 - Use a perfectly flat `#00ff00` chroma-key background for local alpha extraction.
 - Compose exact Chinese captions locally from `spec.json`.
 - Make the emotion differences visible in eyebrows, eyelids, eye shape, mouth shape, cheeks, tears, head angle, and pose.
+- Cover fix on 2026-05-18: regenerated `exports/wechat/cover.png` from the approved master image as a clean frontal upper-body crop, excluding raised hands, caption text, and decorative action marks.
+- Chat-page icon fix on 2026-05-18: regenerated `exports/wechat/icon.png` from the approved master image as a head-only frontal crop, excluding body, hands, caption text, and decorative marks, with transparent padding inside the 50x50 canvas.
 """
     (PACK_ROOT / "source" / "prompts" / "generation-record.md").write_text(record, encoding="utf-8")
 

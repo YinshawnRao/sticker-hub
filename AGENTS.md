@@ -295,7 +295,13 @@ These rules are derived from the user's captured WeChat Sticker Open Platform up
 - Size: `50x50` pixels.
 - Images larger than `100KB` may be compressed by the platform; local export should target `<=100KB`.
 - Must use transparent background.
-- Use the clearest and most recognizable image; a frontal head image of the character is recommended.
+- Use the clearest and most recognizable image.
+- The icon must be a dedicated front-facing head-only crop of the character. It should show the complete head, including the full chin/lower face contour.
+- Do not use a full-body, half-body, raised-hands, gesture, prop, sticker-caption, action-mark, or decorative composition as the chat page icon.
+- Do not create the icon by simply shrinking a sticker or cover image. Make a separate icon crop from the approved master or approved character artwork.
+- The visible head must not be clipped or visually touch the bottom edge. The chin must be fully visible, and there must be clear transparent pixels below the chin after resizing to `50x50`.
+- Mechanical alpha bounds are not enough: if the alpha bounding box has padding but the face/chin itself looks cut off, the icon is not upload-ready.
+- As a local minimum, target at least `4px` transparent padding on every side and at least `6px` below the chin/lower head contour in the final `50x50` PNG. Increase the margin when the character has a round face, beard, scarf, collar, or other lower-face details.
 - Avoid white backgrounds.
 - Avoid white outlines, jagged edges, square frames, and hard rectangular borders.
 - Avoid excessive blank space.
@@ -376,7 +382,15 @@ For final `240x240` sticker exports:
 - Captions, stroke outlines, shadows, action marks, moons, stars, leaves, and props must also stay inside the canvas; none may be clipped by the edge.
 - If a sticker fails the safe-area check, it is not upload-ready even if dimensions, alpha channel, and file size are otherwise valid.
 
-Validators should fail loudly when any final sticker has an alpha bounding box touching the edge or below the configured safe-area threshold. Review contact sheets are not enough; the validator should also report per-file bounding boxes or margins for suspect assets.
+For final `50x50` chat page icon exports:
+
+- Treat the icon as a separate safe-area target, not as a tiny version of the cover or a sticker.
+- The alpha bounding box must not touch any edge and should normally leave at least `4px` transparent padding on every side.
+- The lower face/chin must be complete and visually separated from the bottom canvas edge; target at least `6px` transparent space below the visible chin/lower head contour.
+- If the icon includes body, hands, caption text, action marks, props, or decorative elements, reject it even if the file size and dimensions pass.
+- If the character's chin or lower face is cut by the source crop, reject and recrop/regenerate from the approved source. Do not try to hide a clipped chin by only adding transparent padding.
+
+Validators should fail loudly when any final sticker or icon has an alpha bounding box touching the edge or below the configured safe-area threshold. Review contact sheets are not enough; the validator should also report per-file bounding boxes or margins for suspect assets. Icon review must include an enlarged checkerboard preview so clipped chins and edge-adjacent heads are visible before upload.
 
 ## Quality Bar
 
@@ -395,6 +409,7 @@ For every candidate pack, check:
 - No accidental copyrighted, trademarked, or personally sensitive content
 - Clear pack title, description, and usage context
 - Cover and banner matching the sticker style
+- Chat page icon is a clean front-facing head-only crop with the full chin visible and clear bottom padding
 - Export folder contains only files intended for upload
 
 Before a package is considered upload-ready, enforce the WeChat Upload Contract above in addition to the test-mode quality checks.

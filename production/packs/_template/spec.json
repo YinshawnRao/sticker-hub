@@ -68,7 +68,24 @@
       "width": 50,
       "height": 50,
       "maxBytes": 102400,
-      "background": "transparent"
+      "background": "transparent",
+      "content": "front-facing-head-only",
+      "forbiddenContent": [
+        "full-body",
+        "half-body",
+        "hands",
+        "gesture",
+        "props",
+        "caption-text",
+        "action-marks",
+        "decorative-elements"
+      ],
+      "safeArea": {
+        "minTransparentPaddingPx": 4,
+        "minBottomPaddingBelowChinPx": 6,
+        "requiresCompleteChin": true,
+        "requiresEnlargedCheckerboardReview": true
+      }
     },
     "banner": {
       "formats": [
@@ -145,6 +162,10 @@
       "cover-is-png-240x240-transparent-under-500kb",
       "icon-exists",
       "icon-is-png-50x50-transparent-under-100kb",
+      "icon-alpha-bbox-has-padding",
+      "icon-complete-chin-has-bottom-padding",
+      "manual-review-icon-is-frontal-head-only-no-text-hands-props-or-decorations",
+      "manual-review-icon-enlarged-checkerboard-preview-exists",
       "banner-exists",
       "banner-is-750x400-opaque-under-500kb",
       "form-name-under-8-chinese-chars-no-punctuation-no-spaces",

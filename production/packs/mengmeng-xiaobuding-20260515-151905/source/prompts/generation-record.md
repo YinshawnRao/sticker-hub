@@ -32,3 +32,4 @@
 - Make the emotion differences visible in eyebrows, eyelids, eye shape, mouth shape, cheeks, tears, head angle, and pose.
 - Cover fix on 2026-05-18: regenerated `exports/wechat/cover.png` from the approved master image as a clean frontal upper-body crop, excluding raised hands, caption text, and decorative action marks.
 - Chat-page icon fix on 2026-05-18: regenerated `exports/wechat/icon.png` from the approved master image as a head-only frontal crop, excluding body, hands, caption text, and decorative marks, with transparent padding inside the 50x50 canvas.
+- Sticker 09 crop fix on 2026-05-19: expanded the raw-sheet crop 24px upward for `09-ok-好的.png` so the hat edge uses original source pixels instead of the strict grid boundary.

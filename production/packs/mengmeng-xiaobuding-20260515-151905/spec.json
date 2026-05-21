@@ -78,7 +78,7 @@
     ],
     "approvalHistory": [
       {
-        "at": "2026-05-18T10:58:49+08:00",
+        "at": "2026-05-19T21:04:57+08:00",
         "status": "approved-by-user",
         "source": "user confirmed master card and requested /goal production build"
       }
@@ -328,7 +328,7 @@
       "banner": "exports/wechat/banner.png",
       "metadata": "exports/wechat/metadata.json",
       "form": "exports/wechat/form.md",
-      "generatedAt": "2026-05-18T10:58:49+08:00",
+      "generatedAt": "2026-05-19T21:04:57+08:00",
       "uploadReady": true,
       "validationReport": "review/wechat/validation-report.json"
     }

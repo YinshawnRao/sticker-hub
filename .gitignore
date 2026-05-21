@@ -2,6 +2,8 @@
 .DS_Store
 *.swp
 *.swo
+.vscode/
+.idea/
 
 # Local runtime / temporary outputs
 .env
@@ -11,11 +13,42 @@ tmp/
 dist/
 build/
 node_modules/
+*.log
+
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 
-# Generated sticker assets are intentionally not committed.
-# Keep source-of-truth text files such as brief.md, spec.json, and master/character-card.md.
+# Production packs are local work products.
+# Only the template ships with the repo; real packs stay on the author's machine.
+production/packs/*
+!production/packs/_template/
+!production/packs/_template/**
+
+# Within the template, generated/review/exports/reference content is still ignored
+# (only the directory skeleton + .gitkeep files are tracked).
+production/packs/_template/generated/**
+production/packs/_template/review/**
+production/packs/_template/exports/**
+production/packs/_template/master/input/**
+production/packs/_template/master/candidates/**
+production/packs/_template/master/approved/**
+production/packs/_template/source/references/**
+!production/packs/_template/generated/**/.gitkeep
+!production/packs/_template/review/**/.gitkeep
+!production/packs/_template/exports/**/.gitkeep
+!production/packs/_template/master/input/.gitkeep
+!production/packs/_template/master/candidates/.gitkeep
+!production/packs/_template/master/approved/.gitkeep
+!production/packs/_template/source/references/.gitkeep
+
+# testdata sample pack: keep the source-of-truth text, ignore generated assets.
 testdata/packs/*/generated/**
 testdata/packs/*/review/**
 testdata/packs/*/exports/**
@@ -23,23 +56,3 @@ testdata/packs/*/master/input/**
 testdata/packs/*/master/candidates/**
 testdata/packs/*/master/approved/**
 testdata/packs/*/source/references/**
-
-production/packs/*/generated/**
-production/packs/*/review/**
-production/packs/*/exports/**
-production/packs/*/master/input/**
-production/packs/*/master/candidates/**
-production/packs/*/master/approved/**
-production/packs/*/source/references/**
-
-# Preserve empty template directories.
-!production/packs/_template/generated/
-!production/packs/_template/generated/**
-!production/packs/_template/review/
-!production/packs/_template/review/**
-!production/packs/_template/exports/
-!production/packs/_template/exports/**
-!production/packs/_template/master/input/.gitkeep
-!production/packs/_template/master/candidates/.gitkeep
-!production/packs/_template/master/approved/.gitkeep
-!production/packs/_template/source/references/.gitkeep

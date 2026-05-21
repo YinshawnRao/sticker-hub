@@ -29,6 +29,21 @@ cp -r production/packs/_template production/packs/<your-pack-id>
 
 完整生产规范见 [AGENTS.md](AGENTS.md)，**任何疑问以 AGENTS.md 为准**。
 
+## 最终生产的小技巧：给 prompt 加 `/goal` 前缀
+
+当母版形象、表情文案、风格细节**全部对齐之后**，发起这一轮"跑完 18 张 + 字幕 + 裁切 + 导出 `exports/wechat/`"的 prompt 之前，强烈建议在 prompt 最前面加上 `/goal`：
+
+```text
+/goal 按已确认的 master 和 brief 生成当前表情包
+```
+
+加了 `/goal` 之后：
+
+- 这次任务会**一路跑到所有产物产出为止**，中途不会因为单步完成而停下等指令。
+- Codex 客户端**右上角会显示清晰的任务进度**，随时可见跑到哪一步。
+
+**注意**：只有在已经确认母版、表情文案、风格细节都对齐时才用 `/goal`。母版未确认就上 `/goal`，会一口气产出一堆不可控的图，违反下方铁律。
+
 ## 仓库构成
 
 克隆后你会拿到这些（不含任何真实历史 pack）：
